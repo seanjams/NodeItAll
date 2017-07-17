@@ -10,8 +10,8 @@ QuestionIndexContainer
 
 QuestionDetailContainer
 * QuestionDetail
-** AnswerDetail
-** AnswerForm
+* * AnswerDetail
+* * AnswerForm
 
 UserProfileContainer
 -UserProfile
