@@ -1,33 +1,24 @@
 {
-  currentUser: {
-    id: 1,
-    username: "app-academy"
-  },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    createNote: {errors: ["body can't be blank"]}
-  },
-  notes: {
-    1: {
-      title: "Sample State",
-      body: "is useful to plan",
-      author_id: 1,
-      notebook_id: 1
-      tags: {
-        1: {
-          id: 1
-          name: "Coding"
-        }
-      }
+  questions: {
+    2: {
+      title: "Second Question",
+      body: "More content",
+      id: "2",
+      authorId: "5",
+      username: "thisUser"
     }
   },
-  notebooks: {
-    1: {
-      title: "Redux",
-      author_id: 1,
-      description: "is cool"
+  currentUser: {
+    username: "stackme",
+    id: "500"
+  },
+  answers: {
+    2: {
+      id: "1",
+      body: "the answer",
+      authorId: "10",
+      questionId: "2",
+      username: "anotherUser"
     }
   }
-  tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of notes
 }

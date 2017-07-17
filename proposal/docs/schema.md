@@ -29,6 +29,5 @@ VOTES
 column        datatype  details
 id            int       not_null, primary_key
 user_id       int       not_null, foreign_key
-item_id       int       not_null, foreign_key
-item_type     string    not_null
+answer_id     int       not_null, foreign_key
 up_vote       boolean   not_null
