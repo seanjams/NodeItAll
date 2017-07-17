@@ -5,8 +5,8 @@ NavBar
 
 QuestionIndexContainer
 * QuestionIndex
-** QuestionIndexItem
-** QuestionForm
+* * QuestionIndexItem
+* * QuestionForm
 
 QuestionDetailContainer
 * QuestionDetail
@@ -14,16 +14,16 @@ QuestionDetailContainer
 * * AnswerForm
 
 UserProfileContainer
--UserProfile
---UserQuestions
+* UserProfile
+* * UserQuestions
 
 AuthFormContainer
--AuthForm
+* AuthForm
 
 REACT ROUTES
 
-"/"                       QuestionIndexContainer
-"/signup"                 AuthFormContainer
-"/login"                  AuthFormContainer
-"questions/:questionId"   QuestionDetailContainer
-"users/:username"         UserProfile
+* "/"                       QuestionIndexContainer
+* "/signup"                 AuthFormContainer
+* "/login"                  AuthFormContainer
+* "questions/:questionId"   QuestionDetailContainer
+* "users/:username"         UserProfile
