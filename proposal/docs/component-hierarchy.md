@@ -18,3 +18,11 @@ UserProfileContainer
 
 AuthFormContainer
 -AuthForm
+
+REACT ROUTES
+
+"/"                       QuestionIndexContainer
+"/signup"                 AuthFormContainer
+"/login"                  AuthFormContainer
+"questions/:questionId"   QuestionDetailContainer
+"users/:username"         UserProfile
