@@ -6,6 +6,7 @@ NavBar
 QuestionIndexContainer
 -QuestionIndex
 --QuestionIndexItem
+--QuestionForm
 
 QuestionDetailContainer
 -QuestionDetail
