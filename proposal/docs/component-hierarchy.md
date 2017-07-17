@@ -4,14 +4,14 @@ NavBar
 -SearchContainer
 
 QuestionIndexContainer
--QuestionIndex
---QuestionIndexItem
---QuestionForm
+* QuestionIndex
+** QuestionIndexItem
+** QuestionForm
 
 QuestionDetailContainer
--QuestionDetail
---AnswerDetail
---AnswerForm
+* QuestionDetail
+** AnswerDetail
+** AnswerForm
 
 UserProfileContainer
 -UserProfile
