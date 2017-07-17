@@ -1,4 +1,4 @@
-```json
+```javascript
 {
   questions: {
     2: {
