@@ -1,7 +1,7 @@
 COMPONENTS
 
 NavBar
--SearchContainer
+* SearchContainer
 
 QuestionIndexContainer
 * QuestionIndex
@@ -19,6 +19,8 @@ UserProfileContainer
 
 AuthFormContainer
 * AuthForm
+
+
 
 REACT ROUTES
 
