@@ -30,10 +30,15 @@ export const requestSingleQuestion = id => dispatch => (
     .then(question => dispatch(receiveQuestion(question)))
 );
 
-// export const createQuestion = question => dispatch => (
-//   APIUtil.createQuestion(question)
-//     .then(question => dispatch(addQuestion(question)))
-// );
+export const createQuestion = question => dispatch => (
+  APIUtil.createQuestion(question)
+    .then(question => dispatch(receiveQuestion(question)))
+);
+
+export const updateQuestion = question => dispatch => (
+  APIUtil.updateQuestion(question)
+    .then(question => dispatch(receiveQuestion(question)))
+);
 
 export const deleteQuestion = id => dispatch => (
   APIUtil.deleteQuestion(id)
