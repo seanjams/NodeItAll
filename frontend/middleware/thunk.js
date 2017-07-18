@@ -1,4 +1,4 @@
-const thunk = store => next => action => {
+const thunk = ({dispatch}) => next => action => {
   if (typeof action === 'function') {
     return action(dispatch);
   }
