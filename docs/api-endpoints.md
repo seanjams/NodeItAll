@@ -1,26 +1,26 @@
-Users
+## Users
 * POST /api/users
 * PATCH /api/users/:id
 * GET /api/users/:id
 
-Session
+## Session
 * POST /api/session
 * DELETE /api/session
 
-Questions
+## Questions
 * POST /api/questions
 * GET /api/questions
 * GET /api/questions/:id
+* PUT /api/questions/:id
 * DELETE /api/questions/:id
 
-Answers
+## Answers
 * POST /api/answers
 * GET /api/answers
 * GET /api/answers/:id
+* PUT /api/answers/:id
 * DELETE /api/answers/:id
 
-Votes
-* POST /api/answers/:answer_id/upvote
-* POST /api/answers/:answer_id/downvote
-* DELETE /api/answers/:answer_id/upvote
-* DELETE /api/answers/:answer_id/downvote
+## Votes
+* POST /api/answers/:answer_id/votes
+* PUT /api/votes/:id

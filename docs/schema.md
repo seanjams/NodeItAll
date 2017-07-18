@@ -1,5 +1,5 @@
 
-USERS
+## USERS
 
 | column          | datatype | details                   |
 |-----------------|----------|---------------------------|
@@ -9,7 +9,7 @@ USERS
 | password_digest | string   | not_null                  |
 | session_token   | string   | not_null, indexed, unique |
 
-QUESTIONS
+## QUESTIONS
 
 | column    | datatype | details               |
 |-----------|----------|-----------------------|
@@ -18,7 +18,7 @@ QUESTIONS
 | body      | string   | not_null              |
 | author_id | int      | not_null, foreign_key |
 
-ANSWERS
+## ANSWERS
 
 | column      | datatype | details               |
 |-------------|----------|-----------------------|
@@ -27,7 +27,7 @@ ANSWERS
 | question_id | int      | not_null, foreign_key |
 | author_id   | int      | not_null, foreign_key |
 
-VOTES
+## VOTES
 
 | column    | datatype | details               |
 |-----------|----------|-----------------------|
