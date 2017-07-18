@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 8, allow_nil: true}
   after_initialize :ensure_session_token
-  
+
   has_many :votes
 
   has_many :questions,
@@ -11,7 +11,7 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Question
 
-  has_many :answers
+  has_many :answers,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :Answer

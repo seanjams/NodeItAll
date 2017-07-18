@@ -14,6 +14,7 @@
   },
   currentUser: {
     username: "nodeItAll",
+    email: "nodeItAll@gmail.com"
     id: 500
   },
   answers: {
