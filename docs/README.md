@@ -11,6 +11,7 @@ NodeItAll is a web application inspired by Stack Overflow built using Ruby on Ra
 - [ ] Users will be able to guest log in
 - [ ] Users will be able to search for questions and view answers
 - [ ] Logged In Users will be able to ask questions
+- [ ] Logged In Users will be able to select a best answer for their questions
 - [ ] Logged in Users will be able to answer questions
 - [ ] Logged in Users will be able to vote an answer up or down
 - [ ] Logged in Users will be able to vote a question up or down (BONUS)
