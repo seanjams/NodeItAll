@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Subheader from '../subheader/subheader';
 
 class AuthForm extends React.Component {
 
@@ -11,7 +12,6 @@ class AuthForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    window.props = this.props;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -49,26 +49,28 @@ class AuthForm extends React.Component {
   render() {
     const formType = this.props.formType === 'login' ? "Log In" : "Sign Up";
     return (
-      <div className="auth-form-container">
-        <h2>{formType} or {this.navLink()}</h2>
-        <form className="auth-form" onSubmit={ this.handleSubmit }>
-          <label className="auth-form-label">Username
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-          </label>
-          <label className="auth-form-label">Email
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')} />
-          </label>
-          <label className="auth-form-label">Password
-            <input type="text"
-              value={this.state.password}
-              onChange={this.update('password')} />
-          </label>
-          <div className="login-button"><button>Submit</button></div>
-        </form>
+      <div className="auth-page">
+        <Subheader formType={this.props.formType} />
+        <div className="auth-form-container">
+          <form className="auth-form" onSubmit={ this.handleSubmit }>
+            <label className="auth-form-label">Username
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')} />
+            </label>
+            <label className="auth-form-label">Email
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')} />
+            </label>
+            <label className="auth-form-label">Password
+              <input type="text"
+                value={this.state.password}
+                onChange={this.update('password')} />
+            </label>
+            <div className="login-button"><button>Submit</button></div>
+          </form>
+        </div>
       </div>
     );
   }
