@@ -5,8 +5,8 @@ import answerReducer from './answer_reducer';
 import voteReducer from './vote_reducer';
 
 const rootReducer = combineReducers({
-  questions: questionReducer
-  // currentUser: sessionReducer,
+  questions: questionReducer,
+  session: sessionReducer
   // answers: answerReducer,
   // votes: voteReducer
 })

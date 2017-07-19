@@ -9,6 +9,9 @@ import {requestAllQuestions,
         removeQuestion,
         createQuestion,
         updateQuestion } from './actions/question_actions';
+import {login,
+        signup,
+        logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -21,4 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.removeQuestion = removeQuestion;
   window.createQuestion = createQuestion;
   window.updateQuestion = updateQuestion;
+  window.login = login;
+  window.signup = signup;
+  window.logout = logout;
 });

@@ -1,4 +1,4 @@
-class Api::SessionController < ApplicationController
+class Api::SessionsController < ApplicationController
 
   def create
     username_or_email = params[:user][:username] || params[:user][:email]
@@ -14,8 +14,12 @@ class Api::SessionController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+  end
+
   def destroy
     logout!
-    render api_questions_url
+    render root_url
   end
 end

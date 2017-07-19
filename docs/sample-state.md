@@ -12,10 +12,13 @@
     },
     errors: []
   },
-  currentUser: {
-    username: "nodeItAll",
-    email: "nodeItAll@gmail.com"
-    id: 500
+  session: {
+    currentUser: {
+      username: "nodeItAll",
+      email: "nodeItAll@gmail.com"
+      id: 500
+    },
+    errors: []
   },
   answers: {
     2: {
