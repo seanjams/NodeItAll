@@ -11,7 +11,7 @@ const App = () => (
       </Link>
       <NavBarContainer />
     </header>
-    <section>
+    <section className="main">
       <Switch>
         <Route exact path="/" render={() => <h1>Hi! Home Route Here</h1>} />
         <Route path="/login" component={AuthFormContainer} />

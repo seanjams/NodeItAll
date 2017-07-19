@@ -5,6 +5,7 @@
 body {
   display: flex;
   justify-content: center;
+  font-family: 'Averia Sans Libre', cursive;
 }
 
 #root {
@@ -14,17 +15,17 @@ body {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
   background-color: #dfa;
+  align-items: center;
 }
 
 .home-link {
   flex: 1;
-}
-
-.home-link > h1 {
   margin-left: 20px;
+  text-decoration: none;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  color: #99d;
+  font-size: 32px;
 }
 
 .greeting {
@@ -40,4 +41,41 @@ body {
 .signup, .login {
   margin-right: 20px;
   margin-left: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #aaa;
+}
+
+.auth-form:last-child {
+  margin-bottom: 20px;
+}
+
+.auth-form-label {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-button button {
+  padding: 10px;
+  margin: 10px;
 }
