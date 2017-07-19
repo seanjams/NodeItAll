@@ -39,32 +39,26 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    // if (loggedIn) {
-    //   return (
-    //     <Route path="/" />
-    //   );
-    // } else {
-        return (
-          <form onSubmit={ this.handleSubmit }>
-            <label>Username
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')} />
-            </label>
-            <label>Email
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')} />
-            </label>
-            <label>Password
-              <input type="text"
-                value={this.state.password}
-                onChange={this.update('password')} />
-            </label>
-            <button>Submit</button>
-          </form>
-        );
-      // }
+    return (
+      <form onSubmit={ this.handleSubmit }>
+        <label>Username
+          <input type="text"
+            value={this.state.username}
+            onChange={this.update('username')} />
+        </label>
+        <label>Email
+          <input type="text"
+            value={this.state.email}
+            onChange={this.update('email')} />
+        </label>
+        <label>Password
+          <input type="text"
+            value={this.state.password}
+            onChange={this.update('password')} />
+        </label>
+        <button>Submit</button>
+      </form>
+    );
   }
 }
 

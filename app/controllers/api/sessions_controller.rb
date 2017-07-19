@@ -1,17 +1,18 @@
 class Api::SessionsController < ApplicationController
 
   def create
-    # debugger
-    username_or_email = params[:user][:username] || params[:user][:email]
     @user = User.find_by_credentials(
-      username_or_email,
+      params[:user][:username],
+      params[:user][:password]
+    ) || User.find_by_credentials(
+      params[:user][:email],
       params[:user][:password]
     )
     if @user
       login(@user)
       render :show
     else
-      #render errors
+      #errors
     end
   end
 
