@@ -1,3 +1,43 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 1000px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #dfa;
+}
+
+.home-link {
+  flex: 1;
+}
+
+.home-link > h1 {
+  margin-left: 20px;
+}
+
+.greeting {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.login-links {
+  display: flex;
+}
+
+.signup, .login {
+  margin-right: 20px;
+  margin-left: 20px;
+}

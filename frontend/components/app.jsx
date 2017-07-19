@@ -5,7 +5,7 @@ import AuthFormContainer from './auth/auth_form_container';
 
 const App = () => (
   <div className="app">
-    <header>
+    <header className="nav">
       <Link to="/" className="home-link">
         <h1>NodeItAll</h1>
       </Link>
