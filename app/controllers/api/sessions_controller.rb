@@ -1,6 +1,7 @@
 class Api::SessionsController < ApplicationController
 
   def create
+    # debugger
     username_or_email = params[:user][:username] || params[:user][:email]
     @user = User.find_by_credentials(
       username_or_email,
@@ -8,7 +9,7 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       login(@user)
-      render api_user_url(@user)
+      render :show
     else
       #render errors
     end
@@ -20,6 +21,6 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     logout!
-    render root_url
+    render :new
   end
 end
