@@ -17,12 +17,12 @@
 .greeting {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex: 1;
 }
 
 .session-links {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
 }
 

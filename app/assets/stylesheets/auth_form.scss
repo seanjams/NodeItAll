@@ -1,9 +1,16 @@
+// dark-blue: #1455CC
+// blue: #6F7E99
+// light-blue: #00E0FF
+// light-orange: #FF7740
+// orange: #CC2F14
+
+
 .auth-page {
   width: 800px;
 }
 
 .subheader-container {
-  border-top: 2px solid #aaa;
+  border-top: 1px solid #aaa;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -11,9 +18,9 @@
 
   a {
     position: relative;
-    top: -34px;
+    top: -32px;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     padding: 5px 10px;
   }
 
@@ -25,7 +32,7 @@
     border-top: 2px solid #f60;
     border-left: 1px solid #aaa;
     border-right: 1px solid #aaa;
-    border-bottom: 3px solid #fff;
+    border-bottom: 1px solid #fff;
     background: #fff;
   }
 }
@@ -65,11 +72,7 @@
   margin: 0px 10px;
 }
 
-.error-list {
-  list-style: circle;
-
-  li {
-    color: #f00;
-    text-align: center;
-  }
+.error-list li {
+  color: #f00;
+  text-align: center;
 }
