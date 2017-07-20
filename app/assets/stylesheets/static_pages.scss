@@ -3,16 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #root {
-  width: 1000px;
+  width: 100%;
 }
 
 body {
   display: flex;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
+  color: #1455cc;
+  background-color: #f7f7f5;
 }
 
 .main {
   display: flex;
   justify-content: center;
+}
+
+.session-button {
+  padding: 5px 10px;
+  border: 2px solid #6f7e99;
+  border-radius: 5px;
+  background: #f7f7f5;
+  color: #FF7740;
+  -webkit-transition-duration: 0.25s;
+}
+
+.session-button:hover {
+  background: #FF7740;
+  color: #f7f7f5;
 }

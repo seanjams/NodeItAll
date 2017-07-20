@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Subheader extends React.Component {
+  componentDidMount() {
+    this.props.clearErrors();
+  }
 
   render() {
     let login_selected = "";
@@ -13,14 +16,18 @@ class Subheader extends React.Component {
     }
     return (
       <div className="subheader-container">
-        <Link to="/login" className={login_selected}>Log In</Link>
-        <Link to="/signup" className={signup_selected}>Sign Up</Link>
+        <Link to="/login"
+          className={login_selected}
+          onClick={this.props.clearErrors}>Log In</Link>
+        <Link to="/signup"
+          className={signup_selected}
+          onClick={this.props.clearErrors}>Sign Up</Link>
       </div>
     );
   }
 
 }
 
-export default withRouter(Subheader);
+export default Subheader;
 
 // <h2>{formType} or {this.navLink()}</h2>

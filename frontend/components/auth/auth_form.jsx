@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Subheader from '../subheader/subheader';
+import SubheaderContainer from '../subheader/subheader_container';
 
 class AuthForm extends React.Component {
 
@@ -40,9 +40,9 @@ class AuthForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up</Link>;
+      return <Link to="/signup" onClick={this.props.clearErrors}>Sign Up</Link>;
     } else {
-      return <Link to="/login">Log In</Link>;
+      return <Link to="/login" onClick={this.props.clearErrors}>Log In</Link>;
     }
   }
 
@@ -52,34 +52,71 @@ class AuthForm extends React.Component {
     ));
   }
 
+  renderLogin() {
+    return (
+      <form className="auth-form" onSubmit={ this.handleSubmit }>
+        <ul className="error-list">{ this.renderErrors() }</ul>
+        <input type="text"
+          value={this.state.username}
+          onChange={this.update('username')}
+          placeholder="Username" />
+        <input type="password"
+          value={this.state.password}
+          onChange={this.update('password')}
+          placeholder="Password"/>
+        <div className="session-button-container">
+          <button className="session-button">Log In</button>
+        </div>
+      </form>
+    )
+  }
+
+  renderSignup() {
+    return (
+      <form className="auth-form" onSubmit={ this.handleSubmit }>
+        <ul className="error-list">{ this.renderErrors() }</ul>
+        <input type="text"
+          value={this.state.username}
+          onChange={this.update('username')}
+          placeholder="Username" />
+        <input type="text"
+          value={this.state.email}
+          onChange={this.update('email')}
+          placeholder="Email" />
+        <input type="password"
+          value={this.state.password}
+          onChange={this.update('password')}
+          placeholder="Password"/>
+        <div className="session-button-container">
+          <button className="session-button">Sign Up</button>
+        </div>
+      </form>
+    )
+  }
+
   render() {
     const formType = this.props.formType === 'login' ? "Log In" : "Sign Up";
     return (
       <div className="auth-page">
-        <Subheader formType={this.props.formType} />
+        <SubheaderContainer
+          formType={this.props.formType} />
         <div className="auth-form-container">
           <form className="auth-form" onSubmit={ this.handleSubmit }>
             <ul className="error-list">{ this.renderErrors() }</ul>
-            <label className="auth-form-label">
-              <p>Username</p>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')} />
-            </label>
-            <label className="auth-form-label">
-              <p>Email</p>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')} />
-            </label>
-            <label className="auth-form-label">
-              <p>Password</p>
-              <input type="text"
-                value={this.state.password}
-                onChange={this.update('password')} />
-            </label>
-            <div className="login-button-container">
-              <button className="login-button">Submit</button>
+            <input type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username" />
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder="Email" />
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"/>
+            <div className="session-button-container">
+              <button className="session-button">{ formType }</button>
             </div>
           </form>
         </div>

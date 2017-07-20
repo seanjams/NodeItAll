@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/api_util';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERROR = "RECEIVE_ERROR";
+export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -10,7 +11,11 @@ export const receiveCurrentUser = currentUser => ({
 export const receiveError = err => ({
   type: RECEIVE_ERROR,
   err
-})
+});
+
+export const clearErrors = () => ({
+  type: REMOVE_ERRORS,
+});
 
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(

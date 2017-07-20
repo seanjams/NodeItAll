@@ -1,16 +1,9 @@
-// dark-blue: #1455CC
-// blue: #6F7E99
-// light-blue: #00E0FF
-// light-orange: #FF7740
-// orange: #CC2F14
-
-
 .auth-page {
   width: 800px;
 }
 
 .subheader-container {
-  border-top: 1px solid #aaa;
+  border-top: 1px solid #9090d0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -22,18 +15,23 @@
     text-decoration: none;
     border-bottom: 1px solid transparent;
     padding: 5px 10px;
+    -webkit-transition-duration: 0.25s;
   }
 
   a:first-child {
     margin-left: 50px;
   }
 
+  a:hover {
+    background: #e2e2e2;
+  }
+
   .you-are-here {
     border-top: 2px solid #f60;
-    border-left: 1px solid #aaa;
-    border-right: 1px solid #aaa;
-    border-bottom: 1px solid #fff;
-    background: #fff;
+    border-left: 1px solid #9090d0;
+    border-right: 1px solid #9090d0;
+    border-style: outset;
+    border-bottom: 1px solid #f7f7f5;
   }
 }
 
@@ -48,28 +46,27 @@
     flex-direction: column;
     border: 1px solid #aaa;
     border-radius: 5px;
-    padding: 20px 10px;
+    padding: 30px 20px 20px 20px;
 
-    .auth-form-label {
-      display: flex;
-      justify-content: flex-end;
+    p {
+      margin-right: 20px;
+    }
+
+    input {
+      border-bottom: 1px solid #024;
       margin: 10px;
-
-      p {
-        margin-right: 20px;
-      }
-
-      input {
-        border-bottom: 1px solid #024;
-      }
     }
   }
 }
 
-.login-button-container {
+.session-button-container {
   display: flex;
   justify-content: flex-end;
-  margin: 0px 10px;
+  margin: 20px 10px 0px 10px;
+
+  .session-button {
+    margin: 0px;
+  }
 }
 
 .error-list li {

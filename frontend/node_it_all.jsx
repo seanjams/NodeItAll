@@ -11,7 +11,8 @@ import {requestAllQuestions,
         updateQuestion } from './actions/question_actions';
 import {login,
         signup,
-        logout } from './actions/session_actions';
+        logout,
+        clearErrors } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -27,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.signup = signup;
   window.logout = logout;
+  window.clearErrors = clearErrors;
 });
