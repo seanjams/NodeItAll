@@ -89,7 +89,7 @@ class AuthForm extends React.Component {
     const { formType } = this.props;
     return (
       <div className="auth-page">
-        <SubheaderContainer formType={this.props.formType} />
+        <SubheaderContainer formType={this.props.formType} errors={this.props.errors}/>
         <form className="auth-form-container" onSubmit={ this.handleSubmit }>
           { formType === "login" ? this.renderLogin(): this.renderSignup() }
         </form>
@@ -98,4 +98,4 @@ class AuthForm extends React.Component {
   }
 }
 
-export default withRouter(AuthForm);
+export default AuthForm;
