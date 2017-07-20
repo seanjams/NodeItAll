@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import AuthFormContainer from './auth/auth_form_container';
+import QuestionsIndexContainer from './questions/questions_index_container';
 
 const App = () => (
   <div className="app">
@@ -13,7 +14,7 @@ const App = () => (
     </header>
     <section className="main">
       <Switch>
-        <Route exact path="/" render={() => <h1>Hi! Home Route Here</h1>} />
+        <Route exact path="/" component={QuestionsIndexContainer} />
         <Route path="/login" component={AuthFormContainer} />
         <Route path="/signup" component={AuthFormContainer} />
       </Switch>
