@@ -1,0 +1,34 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dfa;
+  align-items: center;
+}
+
+.home-link {
+  flex: 1;
+  margin-left: 20px;
+  text-decoration: none;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  color: #99d;
+  font-size: 32px;
+}
+
+.greeting {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.session-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.session-button {
+  margin: 0px 20px;
+  padding: 5px 10px;
+  background: #49f;
+  border-radius: 5px;
+}

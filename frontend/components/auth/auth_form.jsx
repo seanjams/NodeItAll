@@ -46,6 +46,12 @@ class AuthForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return this.props.errors.map((err, i) => (
+      <li key={`err-${i}`}>{err}</li>
+    ));
+  }
+
   render() {
     const formType = this.props.formType === 'login' ? "Log In" : "Sign Up";
     return (
@@ -53,22 +59,28 @@ class AuthForm extends React.Component {
         <Subheader formType={this.props.formType} />
         <div className="auth-form-container">
           <form className="auth-form" onSubmit={ this.handleSubmit }>
-            <label className="auth-form-label">Username
+            <ul className="error-list">{ this.renderErrors() }</ul>
+            <label className="auth-form-label">
+              <p>Username</p>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')} />
             </label>
-            <label className="auth-form-label">Email
+            <label className="auth-form-label">
+              <p>Email</p>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')} />
             </label>
-            <label className="auth-form-label">Password
+            <label className="auth-form-label">
+              <p>Password</p>
               <input type="text"
                 value={this.state.password}
                 onChange={this.update('password')} />
             </label>
-            <div className="login-button"><button>Submit</button></div>
+            <div className="login-button-container">
+              <button className="login-button">Submit</button>
+            </div>
           </form>
         </div>
       </div>

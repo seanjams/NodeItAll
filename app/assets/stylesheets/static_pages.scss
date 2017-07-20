@@ -2,111 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#root {
+  width: 1000px;
+}
+
 body {
   display: flex;
   justify-content: center;
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-#root {
-  width: 1000px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: #dfa;
-  align-items: center;
-}
-
-.home-link {
-  flex: 1;
-  margin-left: 20px;
-  text-decoration: none;
-  font-family: 'Oleo Script Swash Caps', cursive;
-  color: #99d;
-  font-size: 32px;
-}
-
-.greeting {
-  display: flex;
-  justify-content: space-around;
-  flex: 1;
-}
-
-.login-links {
-  display: flex;
-}
-
-.login-links a {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
 .main {
   display: flex;
   justify-content: center;
-}
-
-.auth-page {
-  width: 800px;
-}
-
-.subheader-container {
-  border-top: 2px solid #999;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.subheader-container a {
-  position: relative;
-  top: -35.63px;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-
-.subheader-container a:first-child {
-  margin-left: 50px;
-}
-
-.you-are-here {
-  border-top: 2px solid #f00;
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-  border-bottom: none;
-  background: #fff;
-}
-
-.auth-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px;
-}
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #aaa;
-}
-
-.auth-form label:first-child {
-  margin-top: 20px;
-}
-
-.auth-form div:last-child {
-  margin-bottom: 20px;
-}
-
-.auth-form-label {
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px;
-}
-
-.login-button {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0px 10px;
 }

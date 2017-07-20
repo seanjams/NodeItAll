@@ -1,12 +1,15 @@
 class Api::UsersController < ApplicationController
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       login(@user)
       render :show
     else
-      render json: {errors: "Unsuccessful save"}
+      render(
+        json: @user.errors.full_messages,
+        status: 401
+      )
     end
   end
 
@@ -15,7 +18,10 @@ class Api::UsersController < ApplicationController
     if @user.update_attributes(user_params)
       render :show
     else
-      #errors
+      render(
+        json: @user.errors.full_messages,
+        status: 401
+      )
     end
   end
 

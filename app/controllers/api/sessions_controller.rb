@@ -12,7 +12,10 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render :show
     else
-      #errors
+      render(
+        json: ["Invalid Username or Password"],
+        status: 401
+      )
     end
   end
 
@@ -21,7 +24,14 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout!
-    render :new
+    if logged_in?
+      logout!
+      render :new
+    else
+      render(
+        json: ["Nobody Signed In"],
+        status: 401
+      )
+    end
   end
 end

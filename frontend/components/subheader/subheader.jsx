@@ -3,14 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Subheader extends React.Component {
 
-  // navLink() {
-  //   if (this.props.formType === 'login') {
-  //     return <Link to="/signup">Sign Up</Link>;
-  //   } else {
-  //     return <Link to="/login">Log In</Link>;
-  //   }
-  // }
-
   render() {
     let login_selected = "";
     let signup_selected = "";

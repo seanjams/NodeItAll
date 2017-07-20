@@ -4,15 +4,20 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
 
   loginLinks(currentUser, signup, login, logout) {
+    const sampleUser = {username: "Sample", email: "Sample", password: "12345678"}
     if (currentUser) {
       return (
-        <button className="header-button" onClick={logout}>Log Out</button>
+        <button className="session-button" onClick={logout}>Log Out</button>
       );
     } else {
       return (
-        <div className="login-links">
-          <Link to="/signup" className="signup">Sign Up</Link>
-          <Link to="/login" className="login">Log In</Link>
+        <div className="session-links">
+          <Link to="/signup" className="session-button">Sign Up</Link>
+          <Link to="/login" className="session-button">Log In</Link>
+          <button onClick={() => this.props.login(sampleUser)}
+            className="session-button">
+              Guest Log In
+          </button>
         </div>
       );
     }
@@ -22,9 +27,9 @@ class NavBar extends React.Component {
     const { currentUser, signup, login, logout } = this.props;
     return (
       <div className="greeting">
-        <h3>
-          { currentUser ? currentUser.username : "Welcome! Please log in" }
-        </h3>
+        <p>
+          { currentUser ? `Hi ${currentUser.username}!` : null }
+        </p>
         { this.loginLinks(currentUser, signup, login, logout) }
       </div>
     )
