@@ -29,21 +29,13 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { formType, login, signup } = this.props;
-    const process = formType === "login" ? login : signup;
-    process(this.state);
+    const processSession = formType === "login" ? login : signup;
+    processSession(this.state);
     this.setState({
       username: "",
       email: "",
       password: ""
     });
-  }
-
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup" onClick={this.props.clearErrors}>Sign Up</Link>;
-    } else {
-      return <Link to="/login" onClick={this.props.clearErrors}>Log In</Link>;
-    }
   }
 
   renderErrors() {
@@ -54,12 +46,11 @@ class AuthForm extends React.Component {
 
   renderLogin() {
     return (
-      <form className="auth-form" onSubmit={ this.handleSubmit }>
-        <ul className="error-list">{ this.renderErrors() }</ul>
+      <div className="auth-form">
         <input type="text"
           value={this.state.username}
           onChange={this.update('username')}
-          placeholder="Username" />
+          placeholder="Username or Email" />
         <input type="password"
           value={this.state.password}
           onChange={this.update('password')}
@@ -67,13 +58,13 @@ class AuthForm extends React.Component {
         <div className="session-button-container">
           <button className="session-button">Log In</button>
         </div>
-      </form>
+      </div>
     )
   }
 
   renderSignup() {
     return (
-      <form className="auth-form" onSubmit={ this.handleSubmit }>
+      <div className="auth-form">
         <ul className="error-list">{ this.renderErrors() }</ul>
         <input type="text"
           value={this.state.username}
@@ -90,36 +81,18 @@ class AuthForm extends React.Component {
         <div className="session-button-container">
           <button className="session-button">Sign Up</button>
         </div>
-      </form>
+      </div>
     )
   }
 
   render() {
-    const formType = this.props.formType === 'login' ? "Log In" : "Sign Up";
+    const { formType } = this.props;
     return (
       <div className="auth-page">
-        <SubheaderContainer
-          formType={this.props.formType} />
-        <div className="auth-form-container">
-          <form className="auth-form" onSubmit={ this.handleSubmit }>
-            <ul className="error-list">{ this.renderErrors() }</ul>
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="Username" />
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder="Email" />
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"/>
-            <div className="session-button-container">
-              <button className="session-button">{ formType }</button>
-            </div>
-          </form>
-        </div>
+        <SubheaderContainer formType={this.props.formType} />
+        <form className="auth-form-container" onSubmit={ this.handleSubmit }>
+          { formType === "login" ? this.renderLogin(): this.renderSignup() }
+        </form>
       </div>
     );
   }

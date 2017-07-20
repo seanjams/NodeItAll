@@ -11,7 +11,7 @@ body {
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   color: #1455cc;
-  background-color: #f7f7f5;
+  background: #f7f7f5;
 }
 
 .main {
@@ -24,11 +24,11 @@ body {
   border: 2px solid #6f7e99;
   border-radius: 5px;
   background: #f7f7f5;
-  color: #FF7740;
+  color: #ff7740;
   -webkit-transition-duration: 0.25s;
 }
 
 .session-button:hover {
-  background: #FF7740;
+  background: #ff7740;
   color: #f7f7f5;
 }

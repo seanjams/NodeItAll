@@ -4,9 +4,6 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(
       params[:user][:username],
       params[:user][:password]
-    ) || User.find_by_credentials(
-      params[:user][:email],
-      params[:user][:password]
     )
     if @user
       login(@user)
