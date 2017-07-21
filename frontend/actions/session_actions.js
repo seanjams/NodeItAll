@@ -8,9 +8,9 @@ export const receiveCurrentUser = currentUser => ({
   currentUser
 });
 
-export const receiveError = err => ({
+export const receiveError = errors => ({
   type: RECEIVE_ERROR,
-  err
+  errors
 });
 
 export const clearErrors = () => ({
@@ -20,17 +20,20 @@ export const clearErrors = () => ({
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(
     currentUser => dispatch(receiveCurrentUser(currentUser)),
-    err => dispatch(receiveError(err.responseJSON)))
+    err => dispatch(receiveError(err.responseJSON))
+  )
 );
 
 export const login = user => dispatch => (
   APIUtil.login(user).then(
     currentUser => dispatch(receiveCurrentUser(currentUser)),
-    err => dispatch(receiveError(err.responseJSON)))
+    err => dispatch(receiveError(err.responseJSON))
+  )
 );
 
 export const logout = () => dispatch => (
   APIUtil.logout().then(
     () => dispatch(receiveCurrentUser(null)),
-    err => dispatch(receiveError(err.responseJSON)))
+    err => dispatch(receiveError(err.responseJSON))
+  )
 );

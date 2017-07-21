@@ -3,9 +3,12 @@ class Api::QuestionsController < ApplicationController
   def create
     @question = Question.create(question_params)
     if @question.save
-      render :index
+      render :show
     else
-      #errors
+      render(
+        json: ["Can't Process That Which IS NOT PROCESSIBLE"],
+        status: 422
+      )
     end
   end
 
@@ -14,7 +17,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find_by(id: params[:id])
+    @question ||= Question.find_by(id: params[:id])
   end
 
   def update
@@ -22,13 +25,24 @@ class Api::QuestionsController < ApplicationController
     if @question.update_attributes(question_params)
       render :show
     else
-      #errors
+      render(
+        json: ["Can't Find That Which Does Not Exist"],
+        status: 404
+      )
     end
   end
 
   def destroy
-    Question.delete(params[:id])
-    render :index
+    @question = Question.find_by(id: params[:id])
+    if @question
+      @question.delete
+      render :show
+    else
+      render(
+        json: ["Can't Delete That Which Does Not Exist"],
+        status: 404
+      )
+    end
   end
 
   private

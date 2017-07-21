@@ -47,6 +47,7 @@ class AuthForm extends React.Component {
   renderLogin() {
     return (
       <div className="auth-form">
+        <ul className="error-list">{ this.renderErrors() }</ul>
         <input type="text"
           value={this.state.username}
           onChange={this.update('username')}

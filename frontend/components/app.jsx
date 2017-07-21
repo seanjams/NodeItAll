@@ -3,6 +3,7 @@ import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import AuthFormContainer from './auth/auth_form_container';
 import QuestionsIndexContainer from './questions/questions_index_container';
+import QuestionDetailContainer from './questions/question_detail_container';
 
 const App = () => (
   <div className="app">
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path="/" component={QuestionsIndexContainer} />
         <Route path="/login" component={AuthFormContainer} />
         <Route path="/signup" component={AuthFormContainer} />
+        <Route path="/api/questions/:questionId" component={QuestionDetailContainer} />
       </Switch>
     </section>
   </div>

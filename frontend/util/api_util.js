@@ -16,7 +16,7 @@ export const createQuestion = question => (
   $.ajax({
     method: 'POST',
     url: 'api/questions/',
-    data: question
+    data: {question}
   })
 );
 
@@ -24,7 +24,7 @@ export const updateQuestion = question => (
   $.ajax({
     method: 'PUT',
     url: `api/questions/${question.id}`,
-    data: question
+    data: {question}
   })
 );
 

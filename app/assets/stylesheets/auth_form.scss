@@ -3,7 +3,7 @@
 }
 
 .subheader-container {
-  border-top: 1px solid #9090d0;
+  border-top: 1px solid $purple;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,20 +23,20 @@
   }
 
   a:hover {
-    background: #e2e2e2;
+    background: $light-gray;
   }
 
   .you-are-here {
     border-top: 2px solid #f60;
-    border-left: 1px solid #9090d0;
-    border-right: 1px solid #9090d0;
+    border-left: 1px solid $purple;
+    border-right: 1px solid $purple;
     border-style: outset;
-    border-bottom: 1px solid #f7f7f5;
+    border-bottom: 1px solid $lightest-gray;
   }
 }
 
 .auth-form-container {
-  border: 1px solid #aaa;
+  border: 1px solid $purple;
   border-radius: 5px;
   padding: 30px 20px 20px 20px;
   align-items: center;
@@ -53,7 +53,7 @@
     }
 
     input:hover {
-      background: #e2e2e2;
+      background: $light-gray;
     }
 
     .session-button-container {

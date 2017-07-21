@@ -1,18 +1,23 @@
 import React from 'react';
+import QuestionIndexItem from './question_index_item';
 
 class QuestionsIndex extends React.Component {
+
+  componentWillMount() {
+    this.props.requestAllQuestions();
+  }
+
   renderQuestions() {
-    return this.props.questions.map((question, idx) => (
-      <li>
-        <h1>{ question.title }</h1>
-        <p>{}</p>
+    return this.props.questions.map((question, i) => (
+      <li key={`question-${i}`}>
+        <QuestionIndexItem question={question} />
       </li>
     ));
   }
 
   render() {
     return (
-      <div>
+      <div className="questions-index">
         <h1>Questions</h1>
         <ul>{ this.renderQuestions() }</ul>
       </div>

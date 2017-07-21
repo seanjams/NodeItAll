@@ -10,8 +10,8 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  color: #1455cc;
-  background: #f7f7f5;
+  color: $dark-blue;
+  background: $lightest-gray;
 }
 
 .main {
@@ -21,14 +21,14 @@ body {
 
 .session-button {
   padding: 5px 10px;
-  border: 2px solid #6f7e99;
+  border: 2px solid $blue;
   border-radius: 5px;
-  background: #f7f7f5;
-  color: #ff7740;
+  background: $lightest-gray;
+  color: $light-orange;
   -webkit-transition-duration: 0.25s;
 }
 
 .session-button:hover {
-  background: #ff7740;
-  color: #f7f7f5;
+  background: $light-orange;
+  color: $lightest-gray;
 }

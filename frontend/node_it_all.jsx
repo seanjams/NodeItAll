@@ -6,7 +6,7 @@ import configureStore from './store/store';
 // test imports
 import {requestAllQuestions,
         requestSingleQuestion,
-        removeQuestion,
+        deleteQuestion,
         createQuestion,
         updateQuestion } from './actions/question_actions';
 import { login,
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.requestAllQuestions = requestAllQuestions;
   window.requestSingleQuestion = requestSingleQuestion;
-  window.removeQuestion = removeQuestion;
+  window.deleteQuestion = deleteQuestion;
   window.createQuestion = createQuestion;
   window.updateQuestion = updateQuestion;
   window.login = login;
