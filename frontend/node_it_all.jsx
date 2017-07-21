@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   ReactDOM.render(<Root store={store} />, root);
 
+  // These are actions for testing Ajax
   window.store = store;
   window.requestAllQuestions = requestAllQuestions;
   window.requestSingleQuestion = requestSingleQuestion;

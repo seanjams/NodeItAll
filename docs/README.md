@@ -4,6 +4,8 @@
 
 NodeItAll is a web application inspired by Stack Overflow built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
+Hosted on heroku at: https://nodeitall.herokuapp.com/
+
 <!-- - [x] -->
 - [ ] Hosting on Heroku
 - [ ] Users will be able to create accounts
