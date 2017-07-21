@@ -11,9 +11,13 @@ const mapStateToProps = state => ({
   questions: selectAllQuestions(state)
 });
 
-const mapDispatchToProps = dispatch => ({
-  requestAllQuestions: () => dispatch(requestAllQuestions())
-});
+const mapDispatchToProps = (dispatch, {location}) => {
+  const formType = location.pathname.slice(1);
+  return {
+    requestAllQuestions: () => dispatch(requestAllQuestions()),
+    formType
+  }
+};
 
 export default connect(
   mapStateToProps,

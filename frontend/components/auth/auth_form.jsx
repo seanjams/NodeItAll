@@ -90,7 +90,7 @@ class AuthForm extends React.Component {
     const { formType } = this.props;
     return (
       <div className="auth-page">
-        <SubheaderContainer formType={this.props.formType} errors={this.props.errors}/>
+        <SubheaderContainer formType={this.props.formType} />
         <form className="auth-form-container" onSubmit={ this.handleSubmit }>
           { formType === "login" ? this.renderLogin(): this.renderSignup() }
         </form>

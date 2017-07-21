@@ -1,23 +1,27 @@
-.questions-index {
-  margin-top: 30px;
+.questions-index-container {
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   width: 800px;
 
-  h1 {
-    color: $purple;
-    font-size: 42px;
-    margin-bottom: 30px;
-    padding-left: 30px;
+  .subheader-container {
+    justify-content: space-between;
+
+    .question-tabs {
+      .tab {
+        top: -42px;
+      }
+
+      .tab:last-child {
+        margin-right: 50px;
+      }
+    }
   }
 
-  ul {
-
+  .questions-index {
+    position: relative;
+    top: -52px;
     li {
-      border-top: 1px solid $purple;
-    }
-
-    li:last-child {
       border-bottom: 1px solid $purple;
     }
   }

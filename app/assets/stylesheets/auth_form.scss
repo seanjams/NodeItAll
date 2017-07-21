@@ -2,36 +2,12 @@
   width: 800px;
 }
 
-.subheader-container {
-  border-top: 1px solid $purple;
-  display: flex;
+.login-tabs{
   justify-content: flex-start;
-  align-items: center;
-  margin-top: 50px;
+  margin-top: 80px;
 
-  a {
-    position: relative;
-    top: -32px;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding: 5px 10px;
-    -webkit-transition-duration: 0.25s;
-  }
-
-  a:first-child {
+  .tab:first-child {
     margin-left: 50px;
-  }
-
-  a:hover {
-    background: $light-gray;
-  }
-
-  .you-are-here {
-    border-top: 2px solid #f60;
-    border-left: 1px solid $purple;
-    border-right: 1px solid $purple;
-    border-style: outset;
-    border-bottom: 1px solid $lightest-gray;
   }
 }
 

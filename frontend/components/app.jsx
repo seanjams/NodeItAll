@@ -15,10 +15,10 @@ const App = () => (
     </header>
     <section className="main">
       <Switch>
-        <Route exact path="/" component={QuestionsIndexContainer} />
         <Route path="/login" component={AuthFormContainer} />
         <Route path="/signup" component={AuthFormContainer} />
         <Route path="/api/questions/:questionId" component={QuestionDetailContainer} />
+        <Route path="/" component={QuestionsIndexContainer} />
       </Switch>
     </section>
   </div>
