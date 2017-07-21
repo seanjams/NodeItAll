@@ -7,7 +7,7 @@ class QuestionIndexItem extends React.Component {
     const { question } = this.props;
     return (
       <div className="question-index-item">
-        <ItemCounts answerCount={question.answers.length} />
+        <ItemCounts answerCount={question.answerCount} />
         <div className="question-container">
           <Link to={`api/questions/${question.id}`}>
             <h2 className="question-title">{question.title}</h2>
