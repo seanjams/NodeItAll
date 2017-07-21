@@ -8,7 +8,7 @@ class NavBar extends React.Component {
     const sampleUser = {
       username: "Sample",
       email: "Sample",
-      password: "12345678"
+      password: "password"
     };
     if (currentUser) {
       return (
