@@ -1,2 +1,3 @@
-class Vote < ApplicationRecordx  
+class Vote < ApplicationRecord
+  
 end

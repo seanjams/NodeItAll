@@ -1,7 +1,8 @@
 .questions-index {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 800px;
 
 
   h1 {
@@ -20,11 +21,29 @@
     li:last-child {
       border-bottom: 1px solid $purple;
     }
+  }
+}
 
-    .question-index-item {
-      padding: 10px 0px 0px 10px;
-      display: flex;
-      height: 70px;
+.question-index-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+
+  .item-counts {
+    flex: 1;
+  }
+
+  .question-container {
+    display: block;
+    flex: 4;
+
+    .question-title {
+      font-size: 24px;
+    }
+
+    .author-info {
+      // margin-top: 40px;
     }
   }
 }
