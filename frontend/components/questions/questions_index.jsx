@@ -8,6 +8,7 @@ class QuestionsIndex extends React.Component {
   }
 
   renderQuestions() {
+    console.log(this.props.questions);
     return this.props.questions.map((question, i) => (
       <li key={`question-${i}`}>
         <QuestionIndexItem question={question} />
