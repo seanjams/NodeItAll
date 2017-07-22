@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Subheader extends React.Component {
   componentDidMount() {
-    this.props.clearErrors();
+    this.props.clearSessionErrors();
   }
 
   renderLoginTabs() {
@@ -18,10 +18,10 @@ class Subheader extends React.Component {
       <div className="subheader-container login-tabs">
         <Link to="/login"
           className={`tab ${login_selected}`}
-          onClick={this.props.clearErrors}>Log In</Link>
+          onClick={this.props.clearSessionErrors}>Log In</Link>
         <Link to="/signup"
           className={`tab ${signup_selected}`}
-          onClick={this.props.clearErrors}>Sign Up</Link>
+          onClick={this.props.clearSessionErrors}>Sign Up</Link>
       </div>
     );
   }
@@ -42,14 +42,11 @@ class Subheader extends React.Component {
         <h1>Questions</h1>
         <div className="question-tabs">
           <Link to="/"
-            className={`tab ${all_selected}`}
-            onClick={this.props.clearErrors}>All</Link>
+            className={`tab ${all_selected}`}>All</Link>
           <Link to="/mostrecent"
-            className={`tab ${recent_selected}`}
-            onClick={this.props.clearErrors}>Most Recent</Link>
+            className={`tab ${recent_selected}`}>Most Recent</Link>
           <Link to="/trending"
-            className={`tab ${trending_selected}`}
-            onClick={this.props.clearErrors}>Trending</Link>
+            className={`tab ${trending_selected}`}>Trending</Link>
         </div>
       </div>
     );

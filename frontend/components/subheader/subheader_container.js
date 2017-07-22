@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Subheader from './subheader';
-import { clearErrors } from '../../actions/session_actions';
+import { clearSessionErrors } from '../../actions/session_actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    clearErrors: () => dispatch(clearErrors()),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
   };
 };
 
