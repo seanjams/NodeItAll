@@ -12,7 +12,7 @@ import {requestAllQuestions,
 import { login,
         signup,
         logout,
-        clearErrors } from './actions/session_actions';
+        clearSessionErrors } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 
   // These are actions for testing Ajax
-  window.store = store;
-  window.requestAllQuestions = requestAllQuestions;
-  window.requestSingleQuestion = requestSingleQuestion;
-  window.deleteQuestion = deleteQuestion;
-  window.createQuestion = createQuestion;
-  window.updateQuestion = updateQuestion;
-  window.login = login;
-  window.signup = signup;
-  window.logout = logout;
-  window.clearErrors = clearErrors;
+  // window.store = store;
+  // window.requestAllQuestions = requestAllQuestions;
+  // window.requestSingleQuestion = requestSingleQuestion;
+  // window.deleteQuestion = deleteQuestion;
+  // window.createQuestion = createQuestion;
+  // window.updateQuestion = updateQuestion;
+  // window.login = login;
+  // window.signup = signup;
+  // window.logout = logout;
+  // window.clearSessionErrors = clearSessionErrors;
 });
