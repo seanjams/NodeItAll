@@ -21,6 +21,10 @@ class QuestionForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearQuestionErrors();
+  }
+
   update(property) {
     return e => this.setState({
       [property]: e.target.value

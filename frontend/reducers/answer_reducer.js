@@ -1,7 +1,8 @@
 import merge from 'lodash/merge';
 import { RECEIVE_ANSWERS,
         RECEIVE_ANSWER,
-        ANSWER_ERROR } from '../actions/answer_actions';
+        ANSWER_ERROR,
+        REMOVE_ERRORS } from '../actions/answer_actions';
 
 const answerReducer = (state = {errors: []}, action) => {
   Object.freeze(state);
@@ -14,6 +15,8 @@ const answerReducer = (state = {errors: []}, action) => {
     });
   case ANSWER_ERROR:
     return merge({}, state, {errors: action.errors});
+  case REMOVE_ERRORS:
+    return Object.assign({}, state, {errors: []});
   default:
     return state
   }

@@ -14,7 +14,7 @@ export const receiveSessionError = errors => ({
 });
 
 export const clearSessionErrors = () => ({
-  type: REMOVE_ERRORS,
+  type: REMOVE_ERRORS
 });
 
 export const signup = user => dispatch => (

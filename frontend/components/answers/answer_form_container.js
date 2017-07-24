@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { createAnswer } from '../../actions/answer_actions';
+import { createAnswer,
+        clearAnswerErrors } from '../../actions/answer_actions';
 import AnswerForm from './answer_form';
 
 const mapStateToProps = ({session, answers}) => ({
@@ -8,7 +9,8 @@ const mapStateToProps = ({session, answers}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createAnswer: answer => dispatch(createAnswer(answer))
+  createAnswer: answer => dispatch(createAnswer(answer)),
+  clearAnswerErrors: () => dispatch(clearAnswerErrors())
 });
 
 export default connect(

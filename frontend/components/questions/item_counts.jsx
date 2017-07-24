@@ -14,5 +14,3 @@ class ItemCounts extends React.Component {
 }
 
 export default ItemCounts;
-
-// questions: How should I pass along Answer Counts/Vote Counts??

@@ -22,6 +22,10 @@ class AnswerForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearAnswerErrors();
+  }
+
   update(property) {
     return e => this.setState({
       [property]: e.target.value
