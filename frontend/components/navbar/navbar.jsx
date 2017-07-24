@@ -12,7 +12,9 @@ class NavBar extends React.Component {
     };
     if (currentUser) {
       return (
-        <button className="session-button" onClick={logout}>Log Out</button>
+        <button className="session-button" onClick={logout}>
+          Log Out
+        </button>
       );
     } else {
       return (
@@ -35,11 +37,16 @@ class NavBar extends React.Component {
   render() {
     const { currentUser } = this.props;
     return (
-      <div className="greeting">
-        <p>
-          { currentUser ? `Hi ${currentUser.username}!` : null }
-        </p>
-        { this.loginLinks() }
+      <div className="nav">
+        <Link to="/" className="home-link">
+          <h1>NodeItAll</h1>
+        </Link>
+        <div className="greeting">
+          <p>
+            { currentUser ? `Hi ${currentUser.username}!` : null }
+          </p>
+          { this.loginLinks() }
+        </div>
       </div>
     )
   }

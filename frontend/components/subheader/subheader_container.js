@@ -3,10 +3,12 @@ import { withRouter } from 'react-router-dom';
 import Subheader from './subheader';
 import { clearSessionErrors } from '../../actions/session_actions';
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, {location}) => {
+  const formType = location.pathname.slice(1);
   return {
-    clearSessionErrors: () => dispatch(clearSessionErrors())
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
+    formType
   };
 };
 
-export default connect(null, mapDispatchToProps)(Subheader);
+export default withRouter(connect(null, mapDispatchToProps)(Subheader));

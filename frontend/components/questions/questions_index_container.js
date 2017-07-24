@@ -12,10 +12,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, {location}) => {
-  const formType = location.pathname.slice(1);
   return {
-    requestAllQuestions: () => dispatch(requestAllQuestions()),
-    formType
+    requestAllQuestions: () => dispatch(requestAllQuestions())
   }
 };
 

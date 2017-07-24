@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // test imports
-import {requestAllQuestions,
+import { requestAllQuestions,
         requestSingleQuestion,
         deleteQuestion,
         createQuestion,

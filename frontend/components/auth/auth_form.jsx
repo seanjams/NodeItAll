@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SubheaderContainer from '../subheader/subheader_container';
+import QuestionsIndexContainer from '../questions/questions_index_container';
 
 class AuthForm extends React.Component {
 
@@ -46,7 +47,7 @@ class AuthForm extends React.Component {
 
   renderLogin() {
     return (
-      <div className="auth-form">
+      <form className="auth-form" onSubmit={ this.handleSubmit }>
         <ul className="error-list">{ this.renderErrors() }</ul>
         <input type="text"
           value={this.state.username}
@@ -56,16 +57,16 @@ class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.update('password')}
           placeholder="Password"/>
-        <div className="session-button-container">
-          <button className="session-button">Log In</button>
+        <div className="button-container">
+          <button>Log In</button>
         </div>
-      </div>
+      </form>
     )
   }
 
   renderSignup() {
     return (
-      <div className="auth-form">
+      <form className="auth-form" onSubmit={ this.handleSubmit }>
         <ul className="error-list">{ this.renderErrors() }</ul>
         <input type="text"
           value={this.state.username}
@@ -79,21 +80,18 @@ class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.update('password')}
           placeholder="Password"/>
-        <div className="session-button-container">
-          <button className="session-button">Sign Up</button>
+        <div className="button-container">
+          <button>Sign Up</button>
         </div>
-      </div>
+      </form>
     )
   }
 
   render() {
     const { formType } = this.props;
     return (
-      <div className="auth-page">
-        <SubheaderContainer formType={this.props.formType} />
-        <form className="auth-form-container" onSubmit={ this.handleSubmit }>
-          { formType === "login" ? this.renderLogin(): this.renderSignup() }
-        </form>
+      <div className="form">
+        { formType === "login" ? this.renderLogin(): this.renderSignup() }
       </div>
     );
   }

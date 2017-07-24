@@ -1,0 +1,48 @@
+.subheader-container {
+  border-top: 1px solid $purple;
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+
+  h1 {
+    color: $purple;
+    font-size: 42px;
+    position: relative;
+    top: -60px;
+    margin-left: 30px;
+    flex: 2;
+  }
+
+  .tab:hover {
+    background: $light-gray;
+  }
+
+  .tab {
+    position: relative;
+    top: -32px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 5px 10px;
+    -webkit-transition-duration: 0.25s;
+  }
+
+  .question-tabs {
+    flex: 3;
+    display: flex;
+    .tab {
+      top: -42px;
+    }
+
+    .tab:last-child {
+      margin-right: 50px;
+    }
+  }
+
+  .you-are-here {
+    border-top: 2px solid $light-orange;
+    border-left: 1px solid $purple;
+    border-right: 1px solid $purple;
+    border-style: outset;
+    border-bottom: 1px solid $lightest-gray;
+  }
+}

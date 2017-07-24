@@ -1,0 +1,47 @@
+// .login-tabs{
+//   justify-content: flex-start;
+//   margin-top: 80px;
+//
+//   .tab:first-child {
+//     margin-left: 50px;
+//   }
+// }
+
+.form {
+
+  .auth-form, .question-form {
+    border: 1px solid $purple;
+    border-radius: 5px;
+    padding: 30px 20px 20px 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    input {
+      border-bottom: 1px solid #024;
+      margin: 10px;
+      -webkit-transition-duration: 0.2s;
+    }
+
+    input:hover {
+      background: $light-gray;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        margin: 20px 0px 0px 86px;
+      }
+    }
+  }
+}
+
+
+
+
+.error-list li {
+  color: #f00;
+  text-align: center;
+}

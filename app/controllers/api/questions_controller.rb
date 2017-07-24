@@ -5,10 +5,17 @@ class Api::QuestionsController < ApplicationController
     if @question.save
       render :show
     else
-      render(
-        json: ["Can't Process That Which IS NOT PROCESSIBLE"],
-        status: 422
-      )
+      if logged_in?
+        render(
+          json: ["Can't Process That Which IS NOT PROCESSIBLE"],
+          status: 422
+        )
+      else
+        render(
+          json: ["Must be logged in"],
+          status: 402
+        )
+      end
     end
   end
 
@@ -25,10 +32,17 @@ class Api::QuestionsController < ApplicationController
     if @question.update_attributes(question_params)
       render :show
     else
-      render(
-        json: ["Can't Find That Which Does Not Exist"],
-        status: 404
-      )
+      if logged_in?
+        render(
+          json: ["Can't Find That Which Does Not Exist"],
+          status: 422
+        )
+      else
+        render(
+          json: ["Must be logged in"],
+          status: 402
+        )
+      end
     end
   end
 

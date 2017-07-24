@@ -1,7 +1,7 @@
 import React from 'react';
 import QuestionIndexItem from './question_index_item';
 import SubheaderContainer from '../subheader/subheader_container';
-import QuestionFormContainer from './question_form_container';
+import { Route } from 'react-router-dom';
 
 class QuestionsIndex extends React.Component {
 
@@ -18,12 +18,9 @@ class QuestionsIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="questions-index-container">
-        <SubheaderContainer formType={this.props.formType} />
         <ul className="questions-index">{ this.renderQuestions() }</ul>
-        <QuestionFormContainer />
       </div>
     );
   }

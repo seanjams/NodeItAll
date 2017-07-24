@@ -6,13 +6,19 @@ class QuestionForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      author_id: -1
+      author_id: -1,
+      username: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    this.setState({ author_id: this.props.currentUser.id });
+    if (this.props.currentUser) {
+      this.setState({
+        author_id: this.props.currentUser.id,
+        username: this.props.currentUser.username
+      });
+    }
   }
 
   update(property) {
@@ -27,14 +33,13 @@ class QuestionForm extends React.Component {
     createQuestion(this.state);
     this.setState({
       title: "",
-      body: "",
-      author_id: -1
+      body: ""
     });
   }
 
   render() {
     return (
-      <div className="question-form-container">
+      <div className="form">
         <form className="question-form" onSubmit={ this.handleSubmit }>
           <input type="text"
             value={this.state.title}
@@ -44,7 +49,9 @@ class QuestionForm extends React.Component {
             value={this.state.body}
             onChange={this.update('body')}
             placeholder="Body" />
-          <button>Submit</button>
+          <div className="button-container">
+            <button>Submit</button>
+          </div>
         </form>
       </div>
     );

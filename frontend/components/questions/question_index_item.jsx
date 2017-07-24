@@ -9,7 +9,7 @@ class QuestionIndexItem extends React.Component {
       <div className="question-index-item">
         <ItemCounts answerCount={question.answerCount} />
         <div className="question-container">
-          <Link to={`api/questions/${question.id}`}>
+          <Link to={`questions/${question.id}`}>
             <h2 className="question-title">{question.title}</h2>
           </Link>
           <div className="author-info">
