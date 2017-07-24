@@ -50,7 +50,7 @@ class QuestionForm extends React.Component {
             onChange={this.update('body')}
             placeholder="Body" />
           <div className="button-container">
-            <button>Submit</button>
+            <button className="button">Submit</button>
           </div>
         </form>
       </div>

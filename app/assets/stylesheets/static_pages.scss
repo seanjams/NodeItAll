@@ -25,7 +25,7 @@ body {
   }
 }
 
-button {
+.button {
   padding: 5px 10px;
   border: 2px solid $blue;
   border-radius: 5px;
@@ -34,7 +34,7 @@ button {
   -webkit-transition-duration: 0.25s;
 }
 
-button:hover {
+.button:hover {
   background: $light-orange;
   color: $lightest-gray;
 }

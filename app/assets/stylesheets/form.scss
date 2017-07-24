@@ -13,6 +13,7 @@
     border: 1px solid $purple;
     border-radius: 5px;
     padding: 30px 20px 20px 20px;
+    margin: 30px 100px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -31,15 +32,12 @@
       display: flex;
       justify-content: flex-end;
 
-      button {
-        margin: 20px 0px 0px 86px;
+      .button {
+        margin: 20px 0px 0px 96px;
       }
     }
   }
 }
-
-
-
 
 .error-list li {
   color: #f00;

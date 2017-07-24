@@ -6,6 +6,7 @@ import SubheaderContainer from './subheader/subheader_container';
 import QuestionFormContainer from './questions/question_form_container';
 import QuestionsIndexContainer from './questions/questions_index_container';
 import QuestionDetailContainer from './questions/question_detail_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div className="app">
@@ -15,16 +16,16 @@ const App = () => (
     </header>
     <section className="main">
       <div className="index">
-        <Switch>
-          <Route path="/questions/:questionId" component={QuestionDetailContainer} />
-          <Route path="/" component={QuestionsIndexContainer} />
-        </Switch>
+      <Switch>
+        <Route path="/questions/:questionId" component={QuestionDetailContainer} />
+        <Route path="/" component={QuestionsIndexContainer} />
+      </Switch>
       </div>
       <div className="form">
         <Switch>
-          <Route exact path="/" component={QuestionFormContainer} />
-          <Route path="/signup" component={AuthFormContainer} />
-          <Route path="/login" component={AuthFormContainer} />
+          <AuthRoute path="/signup" component={AuthFormContainer} />
+          <AuthRoute path="/login" component={AuthFormContainer} />
+          <ProtectedRoute path="/" component={QuestionFormContainer} />
         </Switch>
       </div>
     </section>
