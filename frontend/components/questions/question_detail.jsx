@@ -14,10 +14,11 @@ class QuestionDetail extends React.Component {
       return (<h1>Loading</h1>);
     } else {
       return (
-        <div className="question-detail">
-          <h1>{question.title}</h1>
-          <p>{question.body}</p>
-          <Link to="/">Back to Questions</Link>
+        <div className="question-detail-container">
+          <div className="question-detail">
+            <h1>{question.title}</h1>
+            <p>{question.body}</p>
+          </div>
         </div>
       );
     }
