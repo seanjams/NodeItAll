@@ -35,13 +35,36 @@ export const deleteQuestion = id => (
   })
 );
 
+export const fetchAllAnswers = questionId => (
+  $.ajax({
+    method: 'GET',
+    url: "api/answers",
+    data: {answer: {question_id: questionId}}
+  })
+);
+
+export const fetchSingleAnswer = id => (
+  $.ajax({
+    method: 'GET',
+    url: `api/answers/${id}`
+  })
+);
+
+export const createAnswer = answer => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/answers/',
+    data: {answer}
+  })
+);
+
 export const signup = user => (
   $.ajax({
     method: 'POST',
     url: 'api/users',
     data: {user}
   })
-)
+);
 
 export const login = user => (
   $.ajax({
@@ -49,11 +72,11 @@ export const login = user => (
     url: 'api/session',
     data: {user}
   })
-)
+);
 
 export const logout = () => (
   $.ajax({
     method: 'DELETE',
     url: 'api/session'
   })
-)
+);

@@ -1,11 +1,26 @@
 class Api::AnswersController < ApplicationController
 
   def create
-    @answer = Answer.create(answer_params)
+    @answer = Answer.new(answer_params)
+    if @answer.save
+      render :show
+    else
+      if logged_in?
+        render(
+          json: ["Can't Process That Which IS NOT PROCESSIBLE"],
+          status: 422
+        )
+      else
+        render(
+          json: ["Must be logged in"],
+          status: 402
+        )
+      end
+    end
   end
 
   def index
-    @answers = Answer.all
+    @answers = Answer.where(question_id: params[:answer][:question_id])
   end
 
   def show

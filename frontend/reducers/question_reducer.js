@@ -4,9 +4,6 @@ import { RECEIVE_QUESTIONS,
         REMOVE_QUESTION,
         QUESTION_ERROR } from '../actions/question_actions';
 
-
-
-
 const questionReducer = (state = {errors: []}, action) => {
   Object.freeze(state);
   switch (action.type) {
@@ -21,7 +18,7 @@ const questionReducer = (state = {errors: []}, action) => {
     delete nextState[action.question.id];
     return nextState;
   case QUESTION_ERROR:
-    return merge({}, state, {errors: action.errors})
+    return merge({}, state, {errors: action.errors});
   default:
     return state
   }

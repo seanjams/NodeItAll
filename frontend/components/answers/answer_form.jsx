@@ -1,12 +1,12 @@
 import React from 'react';
 
-class QuestionForm extends React.Component {
+class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
       body: "",
       author_id: -1,
+      question_id: -1,
       username: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,6 +16,7 @@ class QuestionForm extends React.Component {
     if (this.props.currentUser) {
       this.setState({
         author_id: this.props.currentUser.id,
+        question_id: this.props.match.params.questionId,
         username: this.props.currentUser.username
       });
     }
@@ -29,10 +30,9 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { currentUser, createQuestion } = this.props;
-    createQuestion(this.state);
+    const { currentUser, createAnswer } = this.props;
+    createAnswer(this.state);
     this.setState({
-      title: "",
       body: ""
     });
   }
@@ -48,17 +48,13 @@ class QuestionForm extends React.Component {
   render() {
     return (
       <div className="form">
-        <form className="question-form" onSubmit={ this.handleSubmit }>
-          <h2>New Question</h2>
+        <form className="answer-form" onSubmit={ this.handleSubmit }>
+          <h2>New Answer</h2>
           <ul className="error-list">{ this.renderErrors() }</ul>
-          <input type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
-            placeholder="Title" />
           <input type="text"
             value={this.state.body}
             onChange={this.update('body')}
-            placeholder="Body" />
+            placeholder="Answer" />
           <div className="button-container">
             <button className="button">Submit</button>
           </div>
@@ -68,4 +64,4 @@ class QuestionForm extends React.Component {
   }
 }
 
-export default QuestionForm;
+export default AnswerForm;

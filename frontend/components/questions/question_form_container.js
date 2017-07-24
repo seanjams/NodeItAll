@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import QuestionForm from './question_form';
 import { createQuestion } from '../../actions/question_actions';
+import QuestionForm from './question_form';
 
-const mapStateToProps = ({session}) => ({
-  currentUser: session.currentUser
+const mapStateToProps = ({session, questions}) => ({
+  currentUser: session.currentUser,
+  errors: questions.errors
 });
 
 const mapDispatchToProps = dispatch => ({

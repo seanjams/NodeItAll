@@ -1,21 +1,15 @@
 import { connect } from 'react-redux';
+import { requestAllQuestions } from '../../actions/question_actions';
+import { selectQuestions } from '../../reducers/selectors';
 import QuestionsIndex from './questions_index';
-import { requestAllQuestions,
-        requestSingleQuestion,
-        createQuestion,
-        updateQuestion,
-        deleteQuestion } from '../../actions/question_actions';
-import { selectAllQuestions } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  questions: selectAllQuestions(state)
+  questions: selectQuestions(state)
 });
 
-const mapDispatchToProps = (dispatch, {location}) => {
-  return {
-    requestAllQuestions: () => dispatch(requestAllQuestions())
-  }
-};
+const mapDispatchToProps = (dispatch, {location}) => ({
+  requestAllQuestions: () => dispatch(requestAllQuestions())
+});
 
 export default connect(
   mapStateToProps,
