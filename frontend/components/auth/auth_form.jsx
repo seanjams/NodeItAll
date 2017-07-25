@@ -34,7 +34,7 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { formType, login, signup } = this.props;
-    const processSession = formType === "login" ? login : signup;
+    const processSession = formType === "signup" ? signup : login;
     processSession(this.state);
     this.setState({
       username: "",
@@ -94,6 +94,7 @@ class AuthForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const { formType } = this.props;
     return (
       <div className="form">

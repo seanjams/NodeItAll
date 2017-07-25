@@ -82,6 +82,15 @@ export const createVote = vote => {
   })
 };
 
+export const changeVote = vote => {
+  const newVote = merge({}, vote, {upvote: !vote.upvote})
+  return $.ajax({
+    method: 'PUT',
+    url: `api/votes/${id}`,
+    data: {vote: newVote}
+  })
+}
+
 export const signup = user => (
   $.ajax({
     method: 'POST',

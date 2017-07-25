@@ -8,13 +8,21 @@ class QuestionDetail extends React.Component {
     const { questionId } = this.props.match.params
     this.props.requestSingleQuestion(questionId);
     this.props.requestAllAnswers(questionId);
-    this.props.requestAllVotes(questionId, "Question");
   }
 
   renderAnswers() {
     const q = this.props.match.params.questionId;
     return this.props.answers.map((answer, a) => (
-      <li key={`answer-${q}-${a}`}>{answer.body}</li>
+      <li key={`answer-${q}-${a}`}>
+        <div className="answer-detail">
+          <VoteBoxContainer
+            itemId={answer.id}
+            itemType="Answer"
+            voteCount={answer.voteCount}
+            currentUserVote={answer.currentUserVote}/>
+          <p className="body">{answer.body}</p>
+        </div>
+      </li>
     ));
   }
 
@@ -27,10 +35,15 @@ class QuestionDetail extends React.Component {
       return (
         <div className="question-detail-container">
           <div className="question-detail">
-            <VoteBoxContainer itemId={questionId}
-              itemType="Question" voteCount={question.voteCount} />
-            <h1>{question.title}</h1>
-            <p>{question.body}</p>
+            <VoteBoxContainer
+              itemId={questionId}
+              itemType="Question"
+              voteCount={question.voteCount}
+              currentUserVote={question.currentUserVote}/>
+            <div className="question-text">
+              <h1 className="title">{question.title}</h1>
+              <p className="body">{question.body}</p>
+            </div>
           </div>
           <ul className="answers">
             { this.renderAnswers() }

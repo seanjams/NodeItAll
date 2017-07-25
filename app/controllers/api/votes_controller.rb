@@ -24,7 +24,6 @@ class Api::VotesController < ApplicationController
   end
 
   def index
-    # get ready to switch to a where statement to filter
     @votes = Vote.all
   end
 
@@ -33,7 +32,17 @@ class Api::VotesController < ApplicationController
     if @vote.update_attributes(vote_params)
       render :show
     else
-      #errors
+      if logged_in?
+        render(
+          json: @vote.errors.full_messages,
+          status: 422
+        )
+      else
+        render(
+          json: ["Must be logged in"],
+          status: 402
+        )
+      end
     end
   end
 

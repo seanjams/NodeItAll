@@ -3,11 +3,12 @@ class Api::QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
+      current_user
       render :show
     else
       if logged_in?
         render(
-          json: ["Can't Process That Which IS NOT PROCESSIBLE"],
+          json: @question.errors.full_messages,
           status: 422
         )
       else
@@ -20,21 +21,24 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    @questions = Question.includes(:votes).all
+    current_user
   end
 
   def show
     @question ||= Question.find_by(id: params[:id])
+    current_user
   end
 
   def update
     @question = Question.find_by(id: params[:id])
     if @question.update_attributes(question_params)
+      current_user
       render :show
     else
       if logged_in?
         render(
-          json: ["Can't Find That Which Does Not Exist"],
+          json: @question.errors.full_messages,
           status: 422
         )
       else

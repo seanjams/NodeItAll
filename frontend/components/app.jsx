@@ -17,10 +17,10 @@ const App = () => (
     </header>
     <section className="main">
       <div className="index">
-      <Switch>
-        <Route path="/questions/:questionId" component={QuestionDetailContainer} />
-        <Route path="/" component={QuestionsIndexContainer} />
-      </Switch>
+        <Switch>
+          <Route path="/questions/:questionId" component={QuestionDetailContainer} />
+          <Route path="/" component={QuestionsIndexContainer} />
+        </Switch>
       </div>
       <div className="form">
         <Switch>

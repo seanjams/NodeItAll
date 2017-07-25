@@ -33,7 +33,8 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { currentUser, createQuestion } = this.props;
+    const { createQuestion, clearQuestionErrors } = this.props;
+    clearQuestionErrors();
     createQuestion(this.state);
     this.setState({
       title: "",
