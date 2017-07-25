@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
+import AuthFormContainer from '../components/auth/auth_form_container';
 
 const Auth = ({ component: Component, path, loggedIn }) => (
   <Route path={path} render={(props) => (
@@ -10,7 +11,7 @@ const Auth = ({ component: Component, path, loggedIn }) => (
 
 const Protected = ({ component: Component, path, loggedIn }) => (
   <Route path={path} render={(props) => (
-      loggedIn ? <Component {...props} /> : <Redirect to="/login" />
+      loggedIn ? <Component {...props} /> : <AuthFormContainer />
   )} />
 );
 

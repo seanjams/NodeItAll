@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import VoteBoxContainer from '../votes/vote_box_container';
 
 class QuestionDetail extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     const { questionId } = this.props.match.params
     this.props.requestSingleQuestion(questionId);
     this.props.requestAllAnswers(questionId);
+    this.props.requestAllVotes(questionId, "Question");
   }
 
   renderAnswers() {
@@ -25,6 +27,8 @@ class QuestionDetail extends React.Component {
       return (
         <div className="question-detail-container">
           <div className="question-detail">
+            <VoteBoxContainer itemId={questionId}
+              itemType="Question" voteCount={question.voteCount} />
             <h1>{question.title}</h1>
             <p>{question.body}</p>
           </div>

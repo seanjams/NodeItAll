@@ -7,8 +7,8 @@ import voteReducer from './vote_reducer';
 const rootReducer = combineReducers({
   questions: questionReducer,
   session: sessionReducer,
-  answers: answerReducer
-  // votes: voteReducer
+  answers: answerReducer,
+  votes: voteReducer
 })
 
 export default rootReducer;

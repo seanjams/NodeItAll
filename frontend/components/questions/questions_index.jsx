@@ -5,16 +5,18 @@ import { Route } from 'react-router-dom';
 
 class QuestionsIndex extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.requestAllQuestions();
   }
 
   renderQuestions() {
-    return this.props.questions.map((question, i) => (
-      <li key={`question-${i}`}>
-        <QuestionIndexItem question={question} />
-      </li>
-    ));
+    if (this.props.questions) {
+      return this.props.questions.map((question, i) => (
+        <li key={`question-${i}`}>
+          <QuestionIndexItem question={question} />
+        </li>
+      ));
+    }
   }
 
   render() {

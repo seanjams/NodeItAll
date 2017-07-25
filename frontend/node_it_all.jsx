@@ -13,7 +13,10 @@ import { login,
         signup,
         logout,
         clearSessionErrors } from './actions/session_actions';
-import { requestAnswers } from './actions/answer_actions';
+import { requestAllAnswers } from './actions/answer_actions';
+import { requestAllVotes,
+        requestSingleVote,
+        createVote } from './actions/vote_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -38,5 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.logout = logout;
   window.clearSessionErrors = clearSessionErrors;
-  window.requestAnswers = requestAnswers;
+  window.requestAllAnswers = requestAllAnswers;
+  window.requestAllVotes = requestAllVotes;
+  window.requestSingleVote = requestSingleVote;
+  window.createVote = createVote;
 });

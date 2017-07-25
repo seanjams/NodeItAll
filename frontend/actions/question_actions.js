@@ -24,7 +24,7 @@ export const removeQuestion = question => ({
 export const receiveQuestionError = errors => ({
   type: QUESTION_ERROR,
   errors
-})
+});
 
 export const clearQuestionErrors = () => ({
   type: REMOVE_ERRORS

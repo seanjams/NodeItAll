@@ -33,5 +33,6 @@
 |-----------|----------|-----------------------|
 | id        | int      | not_null, primary_key |
 | upvote    | bool     | not_null              |
-| answer_id | int      | not_null, foreign_key |
+| item_id   | int      | not_null, foreign_key |
+| item_type | string   | not_null              |
 | user_id   | int      | not_null, foreign_key |

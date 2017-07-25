@@ -6,4 +6,8 @@ export const selectQuestions = ({questions}) => (
 
 export const selectAnswers = ({answers}) => (
   values(answers).slice(0,-1)
-)
+);
+
+export const selectVotes = ({votes}) => (
+  values(votes).slice(0,-1)
+);

@@ -67,7 +67,7 @@ class AuthForm extends React.Component {
           <button className="button">Log In</button>
         </div>
       </form>
-    )
+    );
   }
 
   renderSignup() {
@@ -90,14 +90,14 @@ class AuthForm extends React.Component {
           <button className="button">Sign Up</button>
         </div>
       </form>
-    )
+    );
   }
 
   render() {
     const { formType } = this.props;
     return (
       <div className="form">
-        { formType === "login" ? this.renderLogin(): this.renderSignup() }
+        { formType === "signup" ? this.renderSignup(): this.renderLogin() }
       </div>
     );
   }

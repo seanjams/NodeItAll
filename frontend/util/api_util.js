@@ -35,11 +35,11 @@ export const deleteQuestion = id => (
   })
 );
 
-export const fetchAllAnswers = questionId => (
+export const fetchAllAnswers = question_id => (
   $.ajax({
     method: 'GET',
     url: "api/answers",
-    data: {answer: {question_id: questionId}}
+    data: {answer: {question_id}}
   })
 );
 
@@ -57,6 +57,30 @@ export const createAnswer = answer => (
     data: {answer}
   })
 );
+
+export const fetchAllVotes = (item_id, item_type) => (
+  $.ajax({
+    method: 'GET',
+    url: "api/votes",
+    data: {vote: {item_id, item_type}}
+  })
+);
+
+export const fetchSingleVote = id => (
+  $.ajax({
+    method: 'GET',
+    url: `api/votes/${id}`
+  })
+);
+
+export const createVote = vote => {
+  const type = `${vote.item_type.toLowerCase()}s`
+  return $.ajax({
+    method: 'POST',
+    url: `api/${type}/${vote.item_id}/votes`,
+    data: {vote}
+  })
+};
 
 export const signup = user => (
   $.ajax({
