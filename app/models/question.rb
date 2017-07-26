@@ -14,12 +14,17 @@ class Question < ApplicationRecord
     end
   end
 
-  def current_user_vote(id)
-    vote = self.votes.find_by(user_id: id)
+  def current_user_vote(user_id)
+    vote = self.votes.find_by(user_id: user_id)
     if vote
       vote.upvote ? 1 : -1
     else
       0
     end
+  end
+
+  def current_vote_id(user_id)
+    vote = self.votes.find_by(user_id: user_id)
+    vote ? vote.id : nil
   end
 end

@@ -1,12 +1,11 @@
-.question-detail-container {
+.question-answer-container {
   display: flex;
   flex-direction: column;
 }
 
-.question-detail {
+.question-box {
   background-color: $light-orange;
   margin-left: 100px;
-  padding: 50px;
   min-height: 200px;
   border-radius: 10px;
   display: flex;
@@ -20,9 +19,19 @@
   .body {
     margin-left: 80px;
   }
+
+  .vote-box {
+    flex: 1;
+  }
+
+  .question-detail {
+    flex: 4;
+  }
+
+
 }
 
-.answer-detail {
+.answer-box {
   display: flex;
 
   .body {
@@ -30,7 +39,7 @@
   }
 }
 
-.question-text {
+.question-detail {
   display: flex;
   flex-direction: column;
 }
@@ -44,24 +53,45 @@
   .vote-count {
     margin: 0px;
   }
+
+  p {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  button:disabled, button[disabled]{
+    color: #aaa;
+  }
+
+  button:disabled:hover {
+    cursor: default;
+  }
+
 }
 
-.answers {
+.answers-container {
   list-style: none;
   margin-left: 100px;
 
   li {
-    background-color: $light-blue;
-    padding: 30px 50px;
-    min-height: 150px;
-    border-radius: 10px;
+    display: flex;
+    margin: 30px 0px;
+
+    .answer-box {
+      min-height: 150px;
+      border-radius: 10px;
+      background-color: $light-blue;
+      flex: 4;
+    }
+
+    .vote-box {
+      flex: 1;
+    }
   }
 
   li:nth-child(odd) {
-    background-color: $light-gray;
+    .answer-box {
+      background-color: $light-gray;
+    }
   }
-
-  // li:nth-child(3n+2) {
-  //   background-color: $light-orange;
-  // }
 }

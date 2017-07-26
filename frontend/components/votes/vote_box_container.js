@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import VoteBox from './vote_box';
+import { requestSingleQuestion } from '../../actions/question_actions';
+import { requestAllAnswers } from '../../actions/answer_actions';
 import { createVote,
-        updateVote,
+        deleteVote,
         clearVoteErrors } from '../../actions/vote_actions';
 
 const mapStateToProps = ({session, votes}, own) => ({
@@ -11,7 +13,7 @@ const mapStateToProps = ({session, votes}, own) => ({
 
 const mapDispatchToProps = dispatch => ({
   createVote: vote => dispatch(createVote(vote)),
-  updateVote: vote => dispatch(updateVote(vote)),
+  deleteVote: vote => dispatch(deleteVote(vote)),
   clearVoteErrors: () => dispatch(clearVoteErrors())
 });
 

@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/api_util';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const SESSION_ERROR = "SESSION_ERROR";
-export const REMOVE_ERRORS = "REMOVE_ERRORS";
+export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -14,7 +14,7 @@ export const receiveSessionError = errors => ({
 });
 
 export const clearSessionErrors = () => ({
-  type: REMOVE_ERRORS
+  type: REMOVE_SESSION_ERRORS
 });
 
 export const signup = user => dispatch => (

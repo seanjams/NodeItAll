@@ -1,14 +1,17 @@
 import merge from 'lodash/merge';
-import { RECEIVE_VOTE } from '../actions/vote_actions';
+import { RECEIVE_VOTE, REMOVE_VOTE } from '../actions/vote_actions';
 import { RECEIVE_QUESTIONS,
         RECEIVE_QUESTION,
         REMOVE_QUESTION,
         QUESTION_ERROR,
-        REMOVE_ERRORS } from '../actions/question_actions';
+        REMOVE_QUESTION_ERRORS } from '../actions/question_actions';
 
 const questionReducer = (state = {errors: []}, action) => {
   Object.freeze(state);
   let nextState = merge({}, state);
+  let increment = 0;
+  let vote;
+
   switch (action.type) {
   case RECEIVE_QUESTIONS:
     return merge({}, state, action.questions);
@@ -21,14 +24,24 @@ const questionReducer = (state = {errors: []}, action) => {
     return nextState;
   case QUESTION_ERROR:
     return merge({}, state, {errors: action.errors});
-  case REMOVE_ERRORS:
+  case REMOVE_QUESTION_ERRORS:
     return Object.assign({}, state, {errors: []});
   case RECEIVE_VOTE:
-    let increment = 0;
-    const vote = action.vote;
+    vote = action.vote;
     if (vote.itemType === "Question") {
       increment = vote.upvote ? 1: -1;
       nextState[vote.itemId].voteCount += increment;
+      nextState[vote.itemId].currentUserVote += increment;
+      nextState[vote.itemId].currentVoteId = vote.id;
+    }
+    return nextState;
+  case REMOVE_VOTE:
+    vote = action.vote;
+    if (vote.itemType === "Question") {
+      increment = vote.upvote ? 1: -1;
+      nextState[vote.itemId].voteCount -= increment;
+      nextState[vote.itemId].currentUserVote -= increment;
+      nextState[vote.itemId].currentVoteId = null;
     }
     return nextState;
   default:

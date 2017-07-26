@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :answers, only: [:create, :index, :show, :update, :destroy] do
       resources :votes, only: [:create]
     end
-    resources :votes, only: [:index, :show, :update]
+    resources :votes, only: [:index, :show, :destroy]
     resource :session, only: [:create, :destroy]
   end
 end

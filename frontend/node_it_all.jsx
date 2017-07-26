@@ -31,18 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 
   // These are actions for testing Ajax
-  window.store = store;
-  window.requestAllQuestions = requestAllQuestions;
-  window.requestSingleQuestion = requestSingleQuestion;
-  window.deleteQuestion = deleteQuestion;
-  window.createQuestion = createQuestion;
-  window.updateQuestion = updateQuestion;
-  window.login = login;
-  window.signup = signup;
-  window.logout = logout;
-  window.clearSessionErrors = clearSessionErrors;
-  window.requestAllAnswers = requestAllAnswers;
-  window.requestAllVotes = requestAllVotes;
-  window.requestSingleVote = requestSingleVote;
-  window.createVote = createVote;
+  // window.store = store;
+  // window.requestAllQuestions = requestAllQuestions;
+  // window.requestSingleQuestion = requestSingleQuestion;
+  // window.deleteQuestion = deleteQuestion;
+  // window.createQuestion = createQuestion;
+  // window.updateQuestion = updateQuestion;
+  // window.login = login;
+  // window.signup = signup;
+  // window.logout = logout;
+  // window.clearSessionErrors = clearSessionErrors;
+  // window.requestAllAnswers = requestAllAnswers;
+  // window.requestAllVotes = requestAllVotes;
+  // window.requestSingleVote = requestSingleVote;
+  // window.createVote = createVote;
 });

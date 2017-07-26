@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBarContainer from '../search/search_bar_container';
 
 class NavBar extends React.Component {
 
@@ -41,6 +42,7 @@ class NavBar extends React.Component {
         <Link to="/" className="home-link">
           <h1>NodeItAll</h1>
         </Link>
+        
         <div className="greeting">
           <p>
             { currentUser ? `Hi ${currentUser.username}!` : null }

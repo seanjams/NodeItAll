@@ -4,3 +4,4 @@ json.username question.author.username
 json.answerCount question.answers.length
 json.voteCount question.vote_count
 json.currentUserVote question.current_user_vote(current_id)
+json.currentVoteId question.current_vote_id(current_id)

@@ -1,3 +1,5 @@
+import merge from 'lodash/merge';
+
 export const fetchAllQuestions = () => (
   $.ajax({
     method: 'GET',
@@ -82,12 +84,10 @@ export const createVote = vote => {
   })
 };
 
-export const changeVote = vote => {
-  const newVote = merge({}, vote, {upvote: !vote.upvote})
+export const deleteVote = id => {
   return $.ajax({
-    method: 'PUT',
-    url: `api/votes/${id}`,
-    data: {vote: newVote}
+    method: 'DELETE',
+    url: `api/votes/${id}`
   })
 }
 

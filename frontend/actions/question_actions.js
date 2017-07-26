@@ -4,7 +4,7 @@ export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
 export const QUESTION_ERROR = "QUESTION_ERROR";
-export const REMOVE_ERRORS = "REMOVE_ERRORS";
+export const REMOVE_QUESTION_ERRORS = "REMOVE_QUESTION_ERRORS";
 
 export const receiveQuestions = questions => ({
   type: RECEIVE_QUESTIONS,
@@ -27,7 +27,7 @@ export const receiveQuestionError = errors => ({
 });
 
 export const clearQuestionErrors = () => ({
-  type: REMOVE_ERRORS
+  type: REMOVE_QUESTION_ERRORS
 });
 
 export const requestAllQuestions = () => dispatch => (

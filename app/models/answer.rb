@@ -23,4 +23,9 @@ class Answer < ApplicationRecord
       0
     end
   end
+
+  def current_vote_id(user_id)
+    vote = self.votes.find_by(user_id: user_id)
+    vote ? vote.id : nil
+  end
 end
