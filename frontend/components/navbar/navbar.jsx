@@ -6,6 +6,7 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.navHome = this.navHome.bind(this);
   }
 
@@ -27,10 +28,10 @@ class NavBar extends React.Component {
         <div className="session-links">
           <Link to="/signup"
             className="button session-button"
-            onClick={clearSessionErrors}>Sign Up</Link>
+            onClick={this.handleClick}>Sign Up</Link>
           <Link to="/login"
             className="button session-button"
-            onClick={clearSessionErrors}>Log In</Link>
+            onClick={this.handleClick}>Log In</Link>
           <button onClick={() => login(sampleUser)}
             className="button session-button">
               Guest Log In
@@ -40,9 +41,20 @@ class NavBar extends React.Component {
     }
   }
 
+  handleClick() {
+    this.props.clearSessionErrors();
+    console.log(this.props);
+  }
+
+  handleGuest() {
+    console.log(this.props);
+    if (this.props.questionId > 0) {
+      this.props.requestSingleQuestion(this.props.questionId);
+    }
+  }
+
   navHome() {
-    this.props.history.push("/")
-    this.props.requestAllQuestions();
+    this.props.history.push("/");
   }
 
   render() {

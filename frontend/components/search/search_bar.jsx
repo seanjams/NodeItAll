@@ -14,14 +14,12 @@ class SearchBar extends React.Component {
   }
 
   matches() {
+    const matches = [];
     if (this.state.input.length === 0) {
-      return [];
+      return matches;
     }
 
-    const matches = [];
-
     this.props.questions.forEach(question => {
-      // debugger;
       const titlePhrases = [];
       const bodyPhrases = [];
       const titleWords = question.title.split(" ");
@@ -30,7 +28,7 @@ class SearchBar extends React.Component {
       const bodyLength = bodyWords.length;
       const input = this.state.input.toLowerCase();
 
-      let mtch = false;
+      let match = false;
 
       for (let i = 0; i < titleLength; i++) {
         titlePhrases.push(titleWords.join(" ").toLowerCase());
@@ -44,11 +42,11 @@ class SearchBar extends React.Component {
 
       titlePhrases.concat(bodyPhrases).forEach(phrase => {
         if (phrase.startsWith(input)) {
-          mtch = true;
+          match = true;
         }
       });
 
-      if (mtch) {
+      if (match) {
         matches.push(question);
       }
     });
@@ -83,11 +81,6 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    // let searchResults = this.matches().map((result, i) => {
-    //   return (
-    //     <li onClick={this.handleInput}>{result.title}</li>
-    //   );
-    // });
     return (
       <div>
         <form className="search-form" onSubmit={this.handleSubmit}>
@@ -103,8 +96,6 @@ class SearchBar extends React.Component {
       </div>
     );
   }
-
-
 }
 
 export default withRouter(SearchBar);

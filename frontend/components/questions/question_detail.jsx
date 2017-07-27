@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import VoteBoxContainer from '../votes/vote_box_container';
 
 class QuestionDetail extends React.Component {
@@ -13,7 +13,7 @@ class QuestionDetail extends React.Component {
     this.props.removeAnswers();
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const { questionId } = this.props.match.params;
     this.props.requestSingleQuestion(questionId);
     this.props.requestAllAnswers(questionId);
@@ -52,10 +52,12 @@ class QuestionDetail extends React.Component {
 
   renderDelete(id, type, source) {
     return (
-      <button className="button"
-              onClick={() => this.handleClick(id, type, source)}>
-        Delete
-      </button>
+      <div className="delete-button">
+        <button className="button"
+                onClick={() => this.handleClick(id, type, source)}>
+          Delete
+        </button>
+      </div>
     )
   }
 
@@ -66,7 +68,9 @@ class QuestionDetail extends React.Component {
     let active = false;
 
     if (!question) {
-      return (<Redirect to="/" />);
+      return (
+        <h1>Loading...</h1>
+      )
     } else {
       if (currentUser) {
         active = question.authorId === currentUser.id;
@@ -78,8 +82,8 @@ class QuestionDetail extends React.Component {
             <div className="question-detail">
               <h1 className="title">{question.title}</h1>
               <p className="body">{question.body}</p>
+              { active ? this.renderDelete(question.id, "answer") : "" }
             </div>
-            { active ? this.renderDelete(question.id, "answer") : "" }
           </div>
           <ul className="answers-container">
             { this.renderAnswers() }

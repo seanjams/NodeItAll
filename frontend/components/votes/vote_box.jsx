@@ -25,16 +25,16 @@ class VoteBox extends React.Component {
     let ownItem = false;
     if (currentUser) {
       ownItem = item.authorId === currentUser.id;
-    } 
+    }
     return (
       <div className="vote-box">
         <button onClick={() => this.handleVote(true)}
-                disabled={item.currentUserVote === 1 || ownItem}>
+                disabled={item.currentUserVote === 1 || ownItem || !currentUser}>
           <i className="fa fa-chevron-up" aria-hidden="true"></i>
         </button>
         <p className="vote-count">{this.props.item.voteCount}</p>
         <button onClick={() => this.handleVote(false)}
-                disabled={item.currentUserVote === -1 || ownItem}>
+                disabled={item.currentUserVote === -1 || ownItem || !currentUser}>
           <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </button>
       </div>

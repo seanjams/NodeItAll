@@ -6,7 +6,7 @@ import { createVote,
         deleteVote,
         clearVoteErrors } from '../../actions/vote_actions';
 
-const mapStateToProps = ({session, votes}, own) => ({
+const mapStateToProps = ({session, votes}) => ({
   currentUser: session.currentUser,
   errors: votes.errors
 });

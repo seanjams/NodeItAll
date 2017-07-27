@@ -9,7 +9,7 @@
   min-height: 200px;
   border-radius: 10px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 
   .title {
     font-size: 32px;
@@ -26,6 +26,7 @@
 
   .question-detail {
     flex: 4;
+    justify-content: space-around;
   }
 
 
@@ -82,6 +83,9 @@
       border-radius: 10px;
       background-color: $light-blue;
       flex: 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
     }
 
     .vote-box {
@@ -94,4 +98,15 @@
       background-color: $light-gray;
     }
   }
+}
+
+.delete-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .button {
+    margin-right: 20px;
+  }
+
 }

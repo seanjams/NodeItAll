@@ -6,7 +6,9 @@ import { Route } from 'react-router-dom';
 class QuestionsIndex extends React.Component {
 
   componentDidMount() {
-    this.props.requestAllQuestions();
+    if (this.props.formType !== "results") {
+      this.props.requestAllQuestions();
+    }
   }
 
   renderQuestions() {

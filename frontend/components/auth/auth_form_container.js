@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import AuthForm from './auth_form';
 import { login, signup, clearSessionErrors } from '../../actions/session_actions';
+import { requestSingleQuestion } from '../../actions/question_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({session}) => ({
@@ -14,6 +15,7 @@ const mapDispatchToProps = (dispatch, {location}) => {
     login: user => dispatch(login(user)),
     signup: user => dispatch(signup(user)),
     clearSessionErrors: () => dispatch(clearSessionErrors()),
+    requestSingleQuestion: id => dispatch(requestSingleQuestion(id)),
     formType
   };
 };

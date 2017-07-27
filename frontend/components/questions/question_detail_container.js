@@ -4,7 +4,7 @@ import { requestSingleQuestion,
 import { requestAllAnswers,
         removeAnswers,
         deleteAnswer } from '../../actions/answer_actions';
-import { selectAnswers, selectVotes } from '../../reducers/selectors';
+import { selectAnswers, selectRecentQuestions } from '../../reducers/selectors';
 import QuestionDetail from './question_detail';
 
 const mapStateToProps = (state) => ({
