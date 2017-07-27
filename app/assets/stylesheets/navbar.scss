@@ -18,6 +18,14 @@
     color: #030705;
   }
 
+  .search-form {
+    display: flex;
+
+    p {
+      color: red;
+    }
+  }
+
   .greeting {
     display: flex;
     justify-content: flex-end;

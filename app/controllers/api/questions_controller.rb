@@ -26,7 +26,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question ||= Question.find_by(id: params[:id])
+    @question ||= Question.includes(:votes).find_by(id: params[:id])
     current_user
   end
 

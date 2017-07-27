@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SearchBarContainer from '../search/search_bar_container';
 
 class NavBar extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.navHome = this.navHome.bind(this);
+  }
 
   loginLinks() {
     const { currentUser, login, logout, clearSessionErrors } = this.props;
@@ -35,14 +40,19 @@ class NavBar extends React.Component {
     }
   }
 
+  navHome() {
+    this.props.history.push("/")
+    this.props.requestAllQuestions();
+  }
+
   render() {
     const { currentUser } = this.props;
     return (
       <div className="nav">
-        <Link to="/" className="home-link">
+        <button className="home-link" onClick={this.navHome}>
           <h1>NodeItAll</h1>
-        </Link>
-        
+        </button>
+        <SearchBarContainer />
         <div className="greeting">
           <p>
             { currentUser ? `Hi ${currentUser.username}!` : null }
@@ -54,4 +64,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

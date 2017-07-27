@@ -11,11 +11,19 @@ class QuestionsIndex extends React.Component {
 
   renderQuestions() {
     if (this.props.questions) {
-      return this.props.questions.map((question, i) => (
-        <li key={`question-${i}`}>
-          <QuestionIndexItem question={question} />
-        </li>
-      ));
+      if (this.props.formType === "trending") {
+        return this.props.trendingQuestions.map((question, i) => (
+          <li key={`question-${i}`}>
+            <QuestionIndexItem question={question} />
+          </li>
+        ));
+      } else {
+        return this.props.questions.map((question, i) => (
+          <li key={`question-${i}`}>
+            <QuestionIndexItem question={question} />
+          </li>
+        ));
+      }
     }
   }
 

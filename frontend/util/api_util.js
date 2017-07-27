@@ -1,9 +1,10 @@
 import merge from 'lodash/merge';
 
-export const fetchAllQuestions = () => (
+export const fetchAllQuestions = formType => (
   $.ajax({
     method: 'GET',
-    url: 'api/questions'
+    url: 'api/questions',
+    data: {question: {formType}}
   })
 );
 
@@ -60,20 +61,27 @@ export const createAnswer = answer => (
   })
 );
 
-export const fetchAllVotes = (item_id, item_type) => (
+export const deleteAnswer = id => (
   $.ajax({
-    method: 'GET',
-    url: "api/votes",
-    data: {vote: {item_id, item_type}}
+    method: 'DELETE',
+    url: `api/answers/${id}`
   })
 );
 
-export const fetchSingleVote = id => (
-  $.ajax({
-    method: 'GET',
-    url: `api/votes/${id}`
-  })
-);
+// export const fetchAllVotes = (item_id, item_type) => (
+//   $.ajax({
+//     method: 'GET',
+//     url: "api/votes",
+//     data: {vote: {item_id, item_type}}
+//   })
+// );
+
+// export const fetchSingleVote = id => (
+//   $.ajax({
+//     method: 'GET',
+//     url: `api/votes/${id}`
+//   })
+// );
 
 export const createVote = vote => {
   const type = `${vote.item_type.toLowerCase()}s`

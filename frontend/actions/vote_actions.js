@@ -6,11 +6,6 @@ export const REMOVE_VOTE = "REMOVE_VOTE";
 export const VOTE_ERROR = "VOTE_ERROR";
 export const REMOVE_VOTE_ERRORS = "REMOVE_VOTE_ERRORS";
 
-export const receiveVotes = votes => ({
-  type: RECEIVE_VOTES,
-  votes
-});
-
 export const receiveVote = vote => ({
   type: RECEIVE_VOTE,
   vote
@@ -30,17 +25,6 @@ export const receiveVoteError = errors => ({
 export const clearVoteErrors = () => ({
   type: REMOVE_VOTE_ERRORS
 });
-
-export const requestAllVotes = (itemId, itemType) => dispatch => (
-  APIUtil.fetchAllVotes(itemId, itemType)
-    .then(votes => dispatch(receiveVotes(votes)))
-);
-
-// might be useless
-export const requestSingleVote = (id) => dispatch => (
-  APIUtil.fetchSingleVote(id)
-    .then(vote => dispatch(receiveVote(vote)))
-);
 
 export const createVote = vote => dispatch => (
   APIUtil.createVote(vote).then(

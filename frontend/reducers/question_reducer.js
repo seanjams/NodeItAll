@@ -14,7 +14,7 @@ const questionReducer = (state = {errors: []}, action) => {
 
   switch (action.type) {
   case RECEIVE_QUESTIONS:
-    return merge({}, state, action.questions);
+    return Object.assign({}, action.questions, {errors: []});
   case RECEIVE_QUESTION:
     return merge({}, state, {
       [action.question.id]: action.question

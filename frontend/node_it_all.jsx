@@ -4,7 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // test imports
-import { requestAllQuestions,
+import { receiveQuestions,
+        requestAllQuestions,
         requestSingleQuestion,
         deleteQuestion,
         createQuestion,
@@ -14,9 +15,7 @@ import { login,
         logout,
         clearSessionErrors } from './actions/session_actions';
 import { requestAllAnswers } from './actions/answer_actions';
-import { requestAllVotes,
-        requestSingleVote,
-        createVote } from './actions/vote_actions';
+import { createVote } from './actions/vote_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -31,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 
   // These are actions for testing Ajax
-  // window.store = store;
-  // window.requestAllQuestions = requestAllQuestions;
+  window.store = store;
+  window.requestAllQuestions = requestAllQuestions;
+  // window.receiveQuestions = receiveQuestions;
   // window.requestSingleQuestion = requestSingleQuestion;
   // window.deleteQuestion = deleteQuestion;
   // window.createQuestion = createQuestion;
@@ -42,7 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.logout = logout;
   // window.clearSessionErrors = clearSessionErrors;
   // window.requestAllAnswers = requestAllAnswers;
-  // window.requestAllVotes = requestAllVotes;
-  // window.requestSingleVote = requestSingleVote;
   // window.createVote = createVote;
 });

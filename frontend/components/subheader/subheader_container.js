@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Subheader from './subheader';
-import { clearSessionErrors } from '../../actions/session_actions';
+import { requestAllQuestions } from '../../actions/question_actions';
 
 const mapDispatchToProps = (dispatch, {location}) => {
   const formType = location.pathname.slice(1);
   return {
-    clearSessionErrors: () => dispatch(clearSessionErrors()),
+    requestAllQuestions: () => dispatch(requestAllQuestions()),
     formType
   };
 };

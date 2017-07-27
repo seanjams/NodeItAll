@@ -51,8 +51,16 @@ class Api::AnswersController < ApplicationController
   end
 
   def destroy
-    Answer.delete(params[:id])
-    render :index
+    @answer = Answer.find_by(id: params[:id])
+    if @answer
+      @answer.delete
+      render :show
+    else
+      render(
+        json: ["Can't Delete That Which Does Not Exist"],
+        status: 404
+      )
+    end
   end
 
   private

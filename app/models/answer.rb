@@ -3,7 +3,7 @@ class Answer < ApplicationRecord
   validates :question_id, uniqueness: {scope: :author_id}
 
   belongs_to :question
-  has_many :votes, as: :item
+  has_many :votes, as: :item, dependent: :destroy
   belongs_to :author,
     primary_key: :id,
     foreign_key: :author_id,

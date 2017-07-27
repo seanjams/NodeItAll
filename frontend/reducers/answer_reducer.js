@@ -2,6 +2,8 @@ import merge from 'lodash/merge';
 import { RECEIVE_VOTE, REMOVE_VOTE } from '../actions/vote_actions';
 import { RECEIVE_ANSWERS,
         RECEIVE_ANSWER,
+        REMOVE_ANSWER,
+        REMOVE_ANSWERS,
         ANSWER_ERROR,
         REMOVE_ANSWER_ERRORS } from '../actions/answer_actions';
 
@@ -18,6 +20,11 @@ const answerReducer = (state = {errors: []}, action) => {
     return merge({}, state, {
       [action.answer.id]: action.answer
     });
+  case REMOVE_ANSWER:
+    delete nextState[action.answer.id];
+    return nextState;
+  case REMOVE_ANSWERS:
+    return {errors: []};
   case ANSWER_ERROR:
     return merge({}, state, {errors: action.errors});
   case REMOVE_ANSWER_ERRORS:

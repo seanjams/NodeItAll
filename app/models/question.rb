@@ -1,8 +1,8 @@
 class Question < ApplicationRecord
   validates :title, :body, presence: true
 
-  has_many :answers
-  has_many :votes, as: :item
+  has_many :answers, dependent: :destroy
+  has_many :votes, as: :item, dependent: :destroy
   belongs_to :author,
     primary_key: :id,
     foreign_key: :author_id,

@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import { selectQuestions } from '../../reducers/selectors';
-import { requestAllQuestions } from '../../actions/question_actions';
+import { selectRecentQuestions } from '../../reducers/selectors';
+import { receiveQuestions,
+        requestAllQuestions } from '../../actions/question_actions';
 import SearchBar from './search_bar';
 
 
 const mapStateToProps = state => ({
-  questions: selectQuestions(state)
+  questions: selectRecentQuestions(state)
 });
 
 const mapDispatchToProps = dispatch => ({
+  receiveQuestions: questions => dispatch(receiveQuestions(questions)),
   requestAllQuestions: () => dispatch(requestAllQuestions())
 });
 

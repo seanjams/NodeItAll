@@ -1,17 +1,23 @@
 import { connect } from 'react-redux';
-import { requestAllQuestions } from '../../actions/question_actions';
-import { selectQuestions } from '../../reducers/selectors';
+import { withRouter } from 'react-router-dom';
+import { receiveQuestions, requestAllQuestions } from '../../actions/question_actions';
+import { selectRecentQuestions, selectTrendingQuestions } from '../../reducers/selectors';
 import QuestionsIndex from './questions_index';
 
 const mapStateToProps = state => ({
-  questions: selectQuestions(state)
+  questions: selectRecentQuestions(state),
+  trendingQuestions: selectTrendingQuestions(state)
 });
 
-const mapDispatchToProps = (dispatch, {location}) => ({
-  requestAllQuestions: () => dispatch(requestAllQuestions())
-});
+const mapDispatchToProps = (dispatch, {location}) => {
+  const formType = location.pathname.slice(1);
+  return {
+  requestAllQuestions: () => dispatch(requestAllQuestions()),
+  receiveQuestions: (questions) => dispatch(receiveQuestions(questions)),
+  formType
+}};
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(QuestionsIndex);
+)(QuestionsIndex));

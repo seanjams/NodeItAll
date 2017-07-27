@@ -94,7 +94,6 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { formType } = this.props;
     return (
       <div className="form">

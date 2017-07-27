@@ -30,8 +30,8 @@ export const clearQuestionErrors = () => ({
   type: REMOVE_QUESTION_ERRORS
 });
 
-export const requestAllQuestions = () => dispatch => (
-  APIUtil.fetchAllQuestions()
+export const requestAllQuestions = sortType => dispatch => (
+  APIUtil.fetchAllQuestions(sortType)
   .then(questions => dispatch(receiveQuestions(questions)))
 );
 

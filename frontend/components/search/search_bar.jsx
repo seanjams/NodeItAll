@@ -1,73 +1,105 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SearchBar extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      input: ""
+      input: "",
+      errors: ""
     };
-    this.handleInput = this.handleInput.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.requestAllQuestions();
-  }
-
-  handleInput(e) {
-    this.setState({input: e.currentTarget.value})
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   matches() {
-    const matches = [];
     if (this.state.input.length === 0) {
-        return this.props.questions
+      return [];
     }
 
+    const matches = [];
+
     this.props.questions.forEach(question => {
+      // debugger;
+      const titlePhrases = [];
+      const bodyPhrases = [];
+      const titleWords = question.title.split(" ");
+      const titleLength = titleWords.length;
+      const bodyWords = question.body.split(" ");
+      const bodyLength = bodyWords.length;
+      const input = this.state.input.toLowerCase();
 
-      let titleWords = question.title.split(" ");
-      let bodyWords = question.body.split(" ");
-      let subTitles = titleWords.map(word => (
-        word.slice(0, this.state.input.length).toLowerCase()
-      ));
-      let subBodies = bodyWords.map(word => (
-        word.slice(0, this.state.input.length).toLowerCase()
-      ));
+      let mtch = false;
 
-      const match = subTitles.concat(subBodies)
-            .includes(this.state.input.toLowerCase());
-      if (match) {
-        matches.push(question)
+      for (let i = 0; i < titleLength; i++) {
+        titlePhrases.push(titleWords.join(" ").toLowerCase());
+        titleWords.shift();
+      }
+
+      for (let j = 0; j < bodyLength; j++) {
+        bodyPhrases.push(bodyWords.join(" ").toLowerCase());
+        bodyWords.shift();
+      }
+
+      titlePhrases.concat(bodyPhrases).forEach(phrase => {
+        if (phrase.startsWith(input)) {
+          mtch = true;
+        }
+      });
+
+      if (mtch) {
+        matches.push(question);
       }
     });
 
     if (matches.length === 0) {
-      matches.push({
-        title: 'No Questions Match'
-      });
+      this.setState({errors: "No search results"});
+      setTimeout(() => this.setState({errors: ""}), 2500);
     }
-
     return matches;
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    const matchesArr = this.matches();
+    const matches = {};
+    if (matchesArr.length === 0) {
+      this.props.requestAllQuestions();
+    } else {
+      matchesArr.forEach(question => (
+        matches[question.id] = question
+      ));
+      this.props.receiveQuestions(matches);
+      this.props.history.push("/results");
+    }
+  }
+
   update(e) {
-    this.setState({input: e.currentTarget.innerText});
+    this.setState({
+      input: e.currentTarget.value,
+      errors: ""
+    });
   }
 
   render() {
-    let searchResults = this.matches().map((result, i) => {
-      return (
-        <li onClick={this.update}>{result.title}</li>
-      );
-    });
+    // let searchResults = this.matches().map((result, i) => {
+    //   return (
+    //     <li onClick={this.handleInput}>{result.title}</li>
+    //   );
+    // });
     return (
       <div>
-        <input type="text"
-          placeholder="Search Questions"
-          value={this.state.input}
-          onChange={this.handleInput}/>
-        <ul>{searchResults}</ul>
+        <form className="search-form" onSubmit={this.handleSubmit}>
+          <button>
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </button>
+          <input type="text"
+            placeholder="Search Questions"
+            value={this.state.input}
+            onChange={this.update} />
+          <p>{ this.state.errors }</p>
+        </form>
       </div>
     );
   }
@@ -75,4 +107,4 @@ class SearchBar extends React.Component {
 
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
