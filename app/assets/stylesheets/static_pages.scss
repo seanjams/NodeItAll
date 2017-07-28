@@ -21,12 +21,12 @@ header {
 }
 
 .subheader-container {
-  margin-top: 80px;
+  margin-top: 40px;
 
 }
 
 .main {
-  padding-top: 190px;
+  padding-top: 144px;
   // display: flex;
   // justify-content: space-between;
 
@@ -59,6 +59,11 @@ code {
   border-radius: 5px;
   padding: 5px;
 }
+
+.hljs {
+  overflow: hidden;
+}
+
 
 .button {
   padding: 5px 10px;

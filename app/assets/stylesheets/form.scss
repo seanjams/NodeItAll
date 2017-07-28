@@ -1,11 +1,12 @@
 .form {
 
   .auth-form, .question-form, .answer-form {
-    border: 1px solid $purple;
-    border-radius: 10px;
+    margin-right: 6%;
+    margin-left: 3%;
     padding: 30px 20px 20px 20px;
-    margin: 30px;
-    min-height: 600px;
+    border: 2px solid $purple;
+    border-radius: 10px;
+    min-height: 400px;
     align-content: center;
     display: flex;
     flex-direction: column;
@@ -35,7 +36,8 @@
       .plain {
         flex: 1;
         margin: 10px;
-        margin-bottom: 23px;
+        border-bottom: 1px solid $blue;
+        // margin-bottom: 23px;
       }
 
       .code {
@@ -44,6 +46,11 @@
         justify-content: space-between;
         margin: 10px;
         flex: 1;
+        width: 0%;
+
+        .code-text {
+          border-bottom: 1px solid $blue;
+        }
 
         .highlight {
           flex: 1;

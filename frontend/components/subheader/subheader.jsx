@@ -80,7 +80,9 @@ class Subheader extends React.Component {
   render() {
     return(
       <div className="subheader-container">
+        <div className="subtitle-container">
         <h1>Questions</h1>
+        </div>
         <div className="question-tabs">
           { this.renderSearchTab() }
           <Link to="/recent"

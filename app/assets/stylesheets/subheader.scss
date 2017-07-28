@@ -2,17 +2,27 @@
   border-top: 1px solid $purple;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid $purple;
-  // position: fixed;
-  // z-index: 1;
 
+  // border-bottom: 1px solid $purple;
+  // position: fixed;
+  z-index: 1;
+  .subtitle-container {
+    border-bottom: 2px solid $purple;
+    flex: 2;
+    margin-left: 3%;
+    margin-right: 6%;
+  }
   h1 {
     color: $purple;
+    background-color: $lightest-gray;
     font-size: 42px;
     position: relative;
-    top: -60px;
-    margin-left: 30px;
-    flex: 2;
+    // top: -30px;
+    // padding-left: 80px;
+    margin-left: 6%;
+
+
+    // z-index: 2;
   }
 
   .tab:hover {
@@ -29,10 +39,10 @@
   }
 
   .question-tabs {
-    flex: 3;
+    flex: 2;
     display: flex;
     .tab {
-      top: -42px;
+      top: -44px;
     }
 
     .tab:last-child {
