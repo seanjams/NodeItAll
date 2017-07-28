@@ -69,7 +69,7 @@ class AnswerForm extends React.Component {
     return (
       <div className="form">
         <form className="answer-form" onSubmit={ this.handleSubmit }>
-          <h2>Answer This Question!</h2>
+          <h2>Answer This Question</h2>
           <ul className="error-list">{ this.renderErrors() }</ul>
             <div className="body-form">
               <textarea className="plain" wrap="soft" cols="20"
