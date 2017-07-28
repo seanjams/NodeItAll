@@ -1,12 +1,9 @@
 .questions-index-container {
-  margin-top: 80px;
-  margin-left: 100px;
   display: flex;
   flex-direction: column;
-
+  margin-left: 5%;
+  margin-right: 5%;
   .questions-index {
-    position: relative;
-    top: -132px;
     li {
       border-bottom: 1px solid $purple;
     }

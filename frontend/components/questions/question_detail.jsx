@@ -1,4 +1,5 @@
 import React from 'react';
+import Highlight from 'react-syntax-highlight';
 import { withRouter } from 'react-router-dom';
 import VoteBoxContainer from '../votes/vote_box_container';
 
@@ -27,12 +28,21 @@ class QuestionDetail extends React.Component {
       if (currentUser) {
         active = answer.authorId === currentUser.id;
       }
-      const { body, id, questionId } = answer;
+      const { id, questionId } = answer;
+      const body = answer ? answer.body.split("~~$$~~") : ["",""];
+      const plain = body[0];
+      const code = body[1] || "";
+
       return (
         <li key={`answer-${q}-${a}`}>
           <VoteBoxContainer item={answer} itemType="Answer" />
           <div className="answer-box">
-            <p className="body">{body}</p>
+            <div className="plain-code-container">
+              <p>{plain}</p>
+              <Highlight lang={"javascipt"}
+                value={code}
+                className="code-box" />
+            </div>
             { active ? this.renderDelete(id, "answer", questionId) : "" }
           </div>
         </li>
@@ -65,6 +75,9 @@ class QuestionDetail extends React.Component {
     const { questionId } = this.props.match.params;
     const { currentUser } = this.props;
     const question = this.props.questions[questionId];
+    const body = question ? question.body.split("~~$$~~") : ["",""];
+    const plain = body[0];
+    const code = body[1] || "";
     let active = false;
 
     if (!question) {
@@ -81,8 +94,13 @@ class QuestionDetail extends React.Component {
             <VoteBoxContainer item={question} itemType="Question" />
             <div className="question-detail">
               <h1 className="title">{question.title}</h1>
-              <p className="body">{question.body}</p>
-              { active ? this.renderDelete(question.id, "answer") : "" }
+              <div className="plain-code-container">
+                <p>{plain}</p>
+                <Highlight lang={"javascipt"}
+                  value={code}
+                  className="code-box" />
+              </div>
+              { active ? this.renderDelete(question.id, "question") : "" }
             </div>
           </div>
           <ul className="answers-container">

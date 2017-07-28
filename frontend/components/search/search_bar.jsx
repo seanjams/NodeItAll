@@ -82,17 +82,17 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="search-container">
         <form className="search-form" onSubmit={this.handleSubmit}>
-          <button>
+          <button className="search-button">
             <i className="fa fa-search" aria-hidden="true"></i>
           </button>
           <input type="text"
             placeholder="Search Questions"
             value={this.state.input}
-            onChange={this.update} />
-          <p>{ this.state.errors }</p>
+            onChange={this.update} />  
         </form>
+        <p>{ this.state.errors }</p>
       </div>
     );
   }

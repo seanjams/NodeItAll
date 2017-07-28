@@ -2,7 +2,9 @@
   border-top: 1px solid $purple;
   display: flex;
   align-items: center;
-  margin-top: 80px;
+  border-bottom: 1px solid $purple;
+  // position: fixed;
+  // z-index: 1;
 
   h1 {
     color: $purple;

@@ -1,15 +1,19 @@
 import React from 'react';
+import Highlight from 'react-syntax-highlight';
 
 class QuestionForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
       title: "",
-      body: "",
+      plain: "",
+      code: "",
       author_id: -1,
       username: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.formatBody = this.formatBody.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +31,7 @@ class QuestionForm extends React.Component {
 
   update(property) {
     return e => this.setState({
-      [property]: e.target.value
+      [property]: e.currentTarget.value
     });
   }
 
@@ -35,10 +39,20 @@ class QuestionForm extends React.Component {
     e.preventDefault();
     const { createQuestion, clearQuestionErrors } = this.props;
     clearQuestionErrors();
-    createQuestion(this.state);
+
+    const newQuestion = {
+      title: this.state.title,
+      body: this.formatBody(),
+      author_id: this.state.author_id,
+      username: this.state.username
+    };
+
+    createQuestion(newQuestion);
+
     this.setState({
       title: "",
-      body: ""
+      plain: "",
+      code: ""
     });
   }
 
@@ -50,6 +64,12 @@ class QuestionForm extends React.Component {
     }
   }
 
+  formatBody() {
+    const { plain, code } = this.state;
+    const body = plain || code ? plain.concat("~~$$~~").concat(code) : "";
+    return body;
+  }
+
   render() {
     return (
       <div className="form">
@@ -59,11 +79,22 @@ class QuestionForm extends React.Component {
           <input type="text"
             value={this.state.title}
             onChange={this.update('title')}
-            placeholder="Title" />
-          <input type="text"
-            value={this.state.body}
-            onChange={this.update('body')}
-            placeholder="Body" />
+            placeholder="Title"
+            className="title" />
+          <div className="body-form">
+            <textarea className="plain" wrap="soft" cols="20"
+              value={this.state.plain}
+              onChange={this.update('plain')}
+              placeholder="Plain Text" />
+            <div className="code">
+              <textarea wrap="soft" cols="20"
+                onChange={this.update('code')}
+                placeholder="Javascript" />
+              <Highlight lang={"javascript"}
+                value={this.state.code}
+                className="highlight" />
+            </div>
+          </div>
           <div className="button-container">
             <button className="button">Submit</button>
           </div>
@@ -74,3 +105,12 @@ class QuestionForm extends React.Component {
 }
 
 export default QuestionForm;
+
+// <ReactQuill value={this.state.body}
+//             onChange={this.update('body')}
+//             placeholder="Body Text"
+//             modules={modules}
+//             formats={formats} />
+
+
+// <CodeMirror value={this.state.body} onChange={this.update('body')} />

@@ -1,27 +1,63 @@
-// .login-tabs{
-//   justify-content: flex-start;
-//   margin-top: 80px;
-//
-//   .tab:first-child {
-//     margin-left: 50px;
-//   }
-// }
-
 .form {
 
   .auth-form, .question-form, .answer-form {
     border: 1px solid $purple;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 30px 20px 20px 20px;
-    margin: 30px 100px;
-    align-items: center;
+    margin: 30px;
+    min-height: 600px;
+    align-content: center;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 
-    input {
-      border-bottom: 1px solid #024;
+    h2 {
+      font-size: 24px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .title {
+      border-bottom: 1px solid $blue;
+      border-radius: 5px;
+      background: $light-gray;
       margin: 10px;
+      flex: 1;
       -webkit-transition-duration: 0.2s;
+    }
+
+    .body-form {
+      display: flex;
+      flex-direction: row;
+      flex: 10;
+      width: 100%;
+
+      .plain {
+        flex: 1;
+        margin: 10px;
+        margin-bottom: 23px;
+      }
+
+      .code {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px;
+        flex: 1;
+
+        .highlight {
+          flex: 1;
+          code {
+            height: 100%;
+          }
+        }
+
+        textarea {
+          flex: 1;
+        }
+      }
+
+
     }
 
     input:hover {
@@ -31,9 +67,12 @@
     .button-container {
       display: flex;
       justify-content: flex-end;
+      align-items: baseline;
+      // flex: 0.5;
+      width: 100%;
 
       .button {
-        margin: 20px 0px 0px 96px;
+        height: 20px;
       }
     }
   }

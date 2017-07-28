@@ -3,26 +3,61 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #root {
+
+}
+
+header {
+  background: $lightest-gray;
+  position: fixed;
+  z-index: 1;
   width: 100%;
 }
 
+.form {
+  background: $lightest-gray;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+}
+
+.subheader-container {
+  margin-top: 80px;
+
+}
+
+.main {
+  padding-top: 190px;
+  // display: flex;
+  // justify-content: space-between;
+
+  .index {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .form {
+    display: inline-block;
+    width: 50%
+  }
+}
+
 body {
+  margin-right: auto;
+  margin-left: auto;
   font-family: 'Montserrat', sans-serif;
   color: $dark-blue;
   background: $lightest-gray;
 }
 
-.main {
-  display: flex;
-  justify-content: center;
+textarea {
+  background-color: $light-gray;
+  border-radius: 5px;
+  padding: 5px;
+}
 
-  .index {
-    flex: 2;
-  }
-
-  .form {
-      flex: 1;
-  }
+code {
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .button {

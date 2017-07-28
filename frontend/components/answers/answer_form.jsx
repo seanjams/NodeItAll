@@ -1,10 +1,12 @@
 import React from 'react';
+import Highlight from 'react-syntax-highlight';
 
 class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: "",
+      plain: "",
+      code: "",
       author_id: -1,
       question_id: -1,
       username: ""
@@ -34,11 +36,25 @@ class AnswerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { currentUser, createAnswer } = this.props;
-    createAnswer(this.state);
+    const { createAnswer } = this.props;
+    this.props.clearAnswerErrors();
+    const newAnswer = {
+      body: this.formatBody(),
+      author_id: this.state.author_id,
+      question_id: this.state.question_id,
+      username: this.state.username
+    };
+    createAnswer(newAnswer);
     this.setState({
-      body: ""
+      plain: "",
+      code: ""
     });
+  }
+
+  formatBody() {
+    const { plain, code } = this.state;
+    const body = plain || code ? plain.concat("~~$$~~").concat(code) : "";
+    return body;
   }
 
   renderErrors() {
@@ -55,10 +71,20 @@ class AnswerForm extends React.Component {
         <form className="answer-form" onSubmit={ this.handleSubmit }>
           <h2>New Answer</h2>
           <ul className="error-list">{ this.renderErrors() }</ul>
-          <input type="text"
-            value={this.state.body}
-            onChange={this.update('body')}
-            placeholder="Answer" />
+            <div className="body-form">
+              <textarea className="plain" wrap="soft" cols="20"
+                value={this.state.plain}
+                onChange={this.update('plain')}
+                placeholder="Plain Text" />
+              <div className="code">
+                <textarea wrap="soft" cols="20"
+                  onChange={this.update('code')}
+                  placeholder="Javascript" />
+                <Highlight lang={"javascript"}
+                  value={this.state.code}
+                  className="highlight" />
+              </div>
+            </div>
           <div className="button-container">
             <button className="button">Submit</button>
           </div>
