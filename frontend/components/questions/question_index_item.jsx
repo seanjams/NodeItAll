@@ -14,7 +14,7 @@ class QuestionIndexItem extends React.Component {
             <h2 className="question-title">{question.title}</h2>
           </Link>
           <div className="author-info">
-            <p>asked by <p className="username">{question.username}</p> {question.time} ago</p>
+            <p>asked by <span className="username">{question.username}</span> {question.time} ago</p>
           </div>
         </div>
       </div>

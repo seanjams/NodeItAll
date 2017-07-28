@@ -45,6 +45,7 @@
     max-width: 40%;
     code {
       border-radius: 5px;
+      margin-left: 10px;
     }
   }
 }
@@ -52,9 +53,6 @@
 .plain-code-container.solo {
   p {
     max-width: 100%;
-  }
-  .code-box {
-    flex: 0;
   }
 }
 
@@ -81,7 +79,7 @@
   }
 
   button:disabled, button[disabled]{
-    color: #aaa;
+    color: transparent;
   }
 
   button:disabled:hover {

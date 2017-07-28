@@ -19,11 +19,12 @@ class AuthForm extends React.Component {
     this.props.clearSessionErrors();
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/');
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    const flag = nextProps.formType === 'login' || nextProps.formType === 'signup';
+    if (nextProps.loggedIn && flag) {
+      this.props.history.push('/');
+    }
+  }
 
   update(property) {
     return e => this.setState({
@@ -41,8 +42,7 @@ class AuthForm extends React.Component {
       email: "",
       password: ""
     });
-    console.log(this.props);
-    if (this.props.match.params) {
+    if (this.props.match.params && this.props.match.params.questionId) {
       this.props.requestSingleQuestion(this.props.match.params.questionId);
     }
   }
