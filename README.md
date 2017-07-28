@@ -28,33 +28,33 @@
 ### Authentication
 
 Users are prompted with a form containing fields for Username, Email, and Password. If a user has visited before, they can log in with either their username or email in the same field. The password must be at least 8 characters, and is stored in the database as a salted/hashed digest using BCrypt. Salting prevents the database from containing the same random string as a digest, despite users potentially having the same passwords.
-<!--
+
 ![login_flow](/app/assets/images/SignIn.gif)
- -->
+
 
 ### Ask a Question
 
 Ask a question, see if others can help!
-<!--
-![song_show](/app/assets/images/songshow.gif) -->
+
+![question](/app/assets/images/new_question.png)
 
 ### Search for a Question
 
 Search the database for keywords or code.
 
+![search](/app/assets/images/search.png)
+
 ### Answer Questions
 
 Answer a question to help someone else in the community.
 
+![answer](/app/assets/images/new_answer.png)
+
 ### Vote on Questions/Answers
 
 Vote on the questions and answers you find helpful.
-<!--
-![comment](/app/assets/images/comments.gif) -->
 
-
-<!--
-![userPages](/app/assets/images/userPages.gif) -->
+![votes](/app/assets/images/votes.png)
 
 ## In the making...
 
