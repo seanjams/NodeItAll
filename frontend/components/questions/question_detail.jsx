@@ -31,17 +31,15 @@ class QuestionDetail extends React.Component {
       const { id, questionId } = answer;
       const body = answer ? answer.body.split("~~$$~~") : ["",""];
       const plain = body[0];
-      const code = body[1] || "";
-
+      const code = body[1] || null;
+      const isSolo = code ? "" : "solo";
       return (
         <li key={`answer-${q}-${a}`}>
           <VoteBoxContainer item={answer} itemType="Answer" />
           <div className="answer-box">
-            <div className="plain-code-container">
+            <div className={`plain-code-container ${isSolo}`}>
               <p>{plain}</p>
-              <Highlight lang={"javascipt"}
-                value={code}
-                className="code-box" />
+              { this.renderCodeBox(code) }
             </div>
             { active ? this.renderDelete(id, "answer", questionId) : "" }
           </div>
@@ -68,7 +66,17 @@ class QuestionDetail extends React.Component {
           Delete
         </button>
       </div>
-    )
+    );
+  }
+
+  renderCodeBox(code) {
+    if (code) {
+      return (
+        <Highlight lang={"javascript"}
+          value={code}
+          className="code-box" />
+      );
+    }
   }
 
   render() {
@@ -77,7 +85,8 @@ class QuestionDetail extends React.Component {
     const question = this.props.questions[questionId];
     const body = question ? question.body.split("~~$$~~") : ["",""];
     const plain = body[0];
-    const code = body[1] || "";
+    const code = body[1] || null;
+    const isSolo = code ? "" : "solo";
     let active = false;
 
     if (!question) {
@@ -94,11 +103,9 @@ class QuestionDetail extends React.Component {
             <VoteBoxContainer item={question} itemType="Question" />
             <div className="question-detail">
               <h1 className="title">{question.title}</h1>
-              <div className="plain-code-container">
+              <div className={`plain-code-container ${isSolo}`}>
                 <p>{plain}</p>
-                <Highlight lang={"javascipt"}
-                  value={code}
-                  className="code-box" />
+                { this.renderCodeBox(!!code) }
               </div>
               { active ? this.renderDelete(question.id, "question") : "" }
             </div>

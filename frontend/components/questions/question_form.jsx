@@ -66,7 +66,7 @@ class QuestionForm extends React.Component {
 
   formatBody() {
     const { plain, code } = this.state;
-    const body = plain || code ? plain.concat("~~$$~~").concat(code) : "";
+    const body = plain ? plain.concat("~~$$~~").concat(code) : "";
     return body;
   }
 

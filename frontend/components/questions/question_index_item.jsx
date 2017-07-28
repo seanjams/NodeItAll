@@ -5,6 +5,7 @@ import ItemCounts from './item_counts';
 class QuestionIndexItem extends React.Component {
   render() {
     const { question } = this.props;
+    console.log(question);
     return (
       <div className="question-index-item">
         <ItemCounts question={question} />
@@ -13,7 +14,7 @@ class QuestionIndexItem extends React.Component {
             <h2 className="question-title">{question.title}</h2>
           </Link>
           <div className="author-info">
-            <p>Asked By: {question.username}</p>
+            <p>asked by <p className="username">{question.username}</p> {question.time} ago</p>
           </div>
         </div>
       </div>

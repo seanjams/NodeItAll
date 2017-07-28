@@ -2,21 +2,33 @@ import React from 'react';
 
 class ItemCounts extends React.Component {
 
-  // voteCount() {
-  //   const { upvotes } = this.props.question;
-  //   let count = 0;
-  //   upvotes.forEach((upvote) => (
-  //     upvote ? count += 1 : count -= 1
-  //   ));
-  //   return count;
-  // }
+  answerColor() {
+    return this.props.question.answerCount > 0 ? "green" : "";
+  }
+
+  voteColor() {
+    if (this.props.question.voteCount > 0) {
+      return "green";
+    } else if (this.props.question.voteCount < 0) {
+      return "red";
+    } else {
+      return "";
+    }
+  }
 
   render() {
+    const answerColor = this.answerColor();
+    const voteColor = this.voteColor();
+    console.log(answerColor);
     return (
       <div className="item-counts">
-        <ul>
-          <p>Answers: {this.props.question.answerCount}</p>
-          <p>Votes: {this.props.question.voteCount}</p>
+        <ul className={`answer-count ${answerColor}`}>
+          <li className="count">{this.props.question.answerCount}</li>
+          <li className="word">Answers</li>
+        </ul>
+        <ul className={`vote-count ${voteColor}`}>
+          <li className="count">{this.props.question.voteCount}</li>
+          <li className="word">Votes</li>
         </ul>
       </div>
     );

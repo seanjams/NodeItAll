@@ -2,27 +2,20 @@
   border-top: 1px solid $purple;
   display: flex;
   align-items: center;
-
-  // border-bottom: 1px solid $purple;
-  // position: fixed;
   z-index: 1;
+
   .subtitle-container {
     border-bottom: 2px solid $purple;
-    flex: 2;
-    margin-left: 3%;
-    margin-right: 6%;
+    margin-left: 3.6%;
+    margin-right: 5.4%;
+    flex: 3;
   }
+  
   h1 {
     color: $purple;
     background-color: $lightest-gray;
     font-size: 42px;
     position: relative;
-    // top: -30px;
-    // padding-left: 80px;
-    margin-left: 6%;
-
-
-    // z-index: 2;
   }
 
   .tab:hover {
@@ -46,7 +39,7 @@
     }
 
     .tab:last-child {
-      margin-right: 50px;
+      // margin-right: 50px;
     }
   }
 
