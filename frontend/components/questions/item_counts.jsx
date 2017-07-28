@@ -19,7 +19,6 @@ class ItemCounts extends React.Component {
   render() {
     const answerColor = this.answerColor();
     const voteColor = this.voteColor();
-    console.log(answerColor);
     return (
       <div className="item-counts">
         <ul className={`answer-count ${answerColor}`}>

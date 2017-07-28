@@ -79,17 +79,17 @@ class QuestionForm extends React.Component {
           <input type="text"
             value={this.state.title}
             onChange={this.update('title')}
-            placeholder="Title"
+            placeholder="What's your question?"
             className="title" />
           <div className="body-form">
             <textarea className="plain" wrap="soft" cols="20"
               value={this.state.plain}
               onChange={this.update('plain')}
-              placeholder="Plain Text" />
+              placeholder="Plain Text Goes Here" />
             <div className="code">
               <textarea wrap="soft" cols="20"
                 onChange={this.update('code')}
-                placeholder="Javascript"
+                placeholder="Javascript Goes Here"
                 className="code-text" />
               <Highlight lang={"javascript"}
                 value={this.state.code}

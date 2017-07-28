@@ -10,6 +10,7 @@ import { receiveQuestions,
         deleteQuestion,
         createQuestion,
         updateQuestion } from './actions/question_actions';
+import { deleteAnswer } from './actions/answer_actions';
 import { login,
         signup,
         logout,
@@ -30,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 
   // These are actions for testing Ajax
-  window.store = store;
-  window.requestAllQuestions = requestAllQuestions;
+  // window.store = store;
+  // window.requestAllQuestions = requestAllQuestions;
   // window.receiveQuestions = receiveQuestions;
   // window.requestSingleQuestion = requestSingleQuestion;
-  // window.deleteQuestion = deleteQuestion;
+  // window.deleteAnswer = deleteAnswer;
   // window.createQuestion = createQuestion;
   // window.updateQuestion = updateQuestion;
   // window.login = login;

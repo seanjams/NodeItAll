@@ -58,6 +58,7 @@ class AuthForm extends React.Component {
   renderLogin() {
     return (
       <form className="auth-form" onSubmit={ this.handleSubmit }>
+        <h1>Welcome to NodeItAll</h1>
         <ul className="error-list">{ this.renderErrors() }</ul>
         <input type="text"
           value={this.state.username}
@@ -77,6 +78,7 @@ class AuthForm extends React.Component {
   renderSignup() {
     return (
       <form className="auth-form" onSubmit={ this.handleSubmit }>
+        <h1>Welcome to NodeItAll</h1>
         <ul className="error-list">{ this.renderErrors() }</ul>
         <input type="text"
           value={this.state.username}

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #root {
-
+ min-width: 1000px;
 }
 
 header {
@@ -11,33 +11,32 @@ header {
   position: fixed;
   z-index: 1;
   width: 100%;
+  min-width: 1000px;
 }
 
 .form {
   background: $lightest-gray;
   position: fixed;
   z-index: 1;
-  height: 100%;
 }
 
 .subheader-container {
-  margin-top: 40px;
-
+  margin-top: 48px;
 }
 
 .main {
-  padding-top: 144px;
-  // display: flex;
-  // justify-content: space-between;
+  padding-top: 171px;
 
   .index {
     display: inline-block;
     width: 60%;
+    max-width: 60%;
   }
 
   .form {
     display: inline-block;
-    width: 40%
+    width: 40%;
+    max-width: 40%;
   }
 }
 
@@ -50,9 +49,14 @@ body {
 }
 
 textarea {
-  background-color: $light-gray;
+  background-color: $lightest-gray;
   border-radius: 5px;
   padding: 5px;
+  -webkit-transition-duration: 0.2s;
+}
+
+textarea:hover {
+  background-color: $light-gray;
 }
 
 code {
@@ -70,11 +74,11 @@ code {
   border: 2px solid $blue;
   border-radius: 5px;
   background: $lightest-gray;
-  color: $light-orange;
+  color: $orange;
   -webkit-transition-duration: 0.25s;
 }
 
-.button:hover {
-  background: $light-orange;
+button:hover {
+  background: $purple;
   color: $lightest-gray;
 }

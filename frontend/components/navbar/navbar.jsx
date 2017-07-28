@@ -43,11 +43,9 @@ class NavBar extends React.Component {
 
   handleClick() {
     this.props.clearSessionErrors();
-    console.log(this.props);
   }
 
   handleGuest() {
-    console.log(this.props);
     if (this.props.questionId > 0) {
       this.props.requestSingleQuestion(this.props.questionId);
     }

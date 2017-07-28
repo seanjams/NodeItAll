@@ -69,17 +69,17 @@ class AnswerForm extends React.Component {
     return (
       <div className="form">
         <form className="answer-form" onSubmit={ this.handleSubmit }>
-          <h2>New Answer</h2>
+          <h2>Answer This Question!</h2>
           <ul className="error-list">{ this.renderErrors() }</ul>
             <div className="body-form">
               <textarea className="plain" wrap="soft" cols="20"
                 value={this.state.plain}
                 onChange={this.update('plain')}
-                placeholder="Plain Text" />
+                placeholder="Plain Text Goes Here" />
               <div className="code">
                 <textarea wrap="soft" cols="20"
                   onChange={this.update('code')}
-                  placeholder="Javascript"
+                  placeholder="Javascript Goes Here"
                   className="code-text" />
                 <Highlight lang={"javascript"}
                   value={this.state.code}
