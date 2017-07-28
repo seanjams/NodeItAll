@@ -42,7 +42,7 @@
     flex: 2;
     display: flex;
     .tab {
-      top: -44px;
+      top: -43px;
     }
 
     .tab:last-child {
@@ -55,6 +55,6 @@
     border-left: 1px solid $purple;
     border-right: 1px solid $purple;
     border-style: outset;
-    border-bottom: 1px solid $lightest-gray;
+    border-bottom: 3px solid $lightest-gray;
   }
 }
