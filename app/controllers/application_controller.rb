@@ -20,8 +20,5 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
-
-  # def require_logged_in!
-  #
-  # end
+  
 end
