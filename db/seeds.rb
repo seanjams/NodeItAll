@@ -65,6 +65,17 @@ sample_questions = Question.create([
     body: "How can I redirect the user from one page to another using JavaScript or jQuery?",
     author_id: 1,
   },
+  {
+    title: "How do I remove a particular element from an array in JavaScript?",
+    body: "I have an array of integers, and I'm using the .push() method to add elements to it.
+
+    Is there a simple way to remove a specific element from an array? The equivalent of something like  array.remove(int);.
+
+    I have to use core JavaScript - no frameworks are allowed.",
+    author_id: 4,
+  },
+
+
 
   # {
   #   title: "Why do fools fall in love?",
@@ -95,9 +106,39 @@ sample_questions = Question.create([
 
 sample_answers = Answer.create([
   {
-    body: "One does not simply redirect using jQuery, jQuery is not necessary, and window.location.replace(...) will best simulate an HTTP redirect. window.location.replace(...) is better than using window.location.href, because replace() does not keep the originating page in the session history, meaning the user won't get stuck in a never-ending back-button fiasco. If you want to simulate someone clicking on a link, use location.href. If you want to simulate an HTTP redirect, use location.replace~~$$~~// similar behavior as an HTTP redirect\nwindow.location.replace('http://stackoverflow.com');\n// similar behavior as clicking on a link\nwindow.location.href = 'http://stackoverflow.com';",
+    body: "One does not simply redirect using jQuery, jQuery is not necessary, and window.location.replace(...) will best simulate an HTTP redirect. window.location.replace(...) is better than using window.location.href, because replace() does not keep the originating page in the session history, meaning the user won't get stuck in a never-ending back-button fiasco. If you want to simulate someone clicking on a link, use location.href. If you want to simulate an HTTP redirect, use location.replace~~$$~~// similar behavior as an HTTP redirect\nwindow.location.replace('http://nodeitall.com');\n// similar behavior as clicking on a link\nwindow.location.href = 'http://nodeitall.com';",
     question_id: 1,
     author_id: 5
+  },
+  {
+    body: "~~$$~~//First, find the index of the element you want to remove:\n\nvar array = [2, 5, 9];\nvar index = array.indexOf(5);\n\n//Then remove it with splice:\n\nif (index > -1) {\n    array.splice(index, 1);\n}",
+    question_id: 2,
+    author_id: 2
+  },
+  {
+    body: "Most of the given answers work for strict comparison, meaning that both objects reference the exact same object in memory (or are primitive types), but often you want to remove a non-primitive object from an array that has a certain value. For instance, if you make a call to a server and want to check a retrieved object against a local object.~~$$~~const a = {'field': 2} // Non-primitive object
+const b = {'field': 2} // Non-primitive object with same value
+const c = a            // Non-primitive object that reference the same object as 'a'
+
+assert(a !== b) // Don't reference the same item, but have same value
+assert(a === c) // Do reference the same item, and have same value (naturally)
+
+//Note: there are many alternative implementations for valueCompare,
+// this one is versatile but might be too slow.
+function valueCompare (x, y) {
+   return  JSON.stringify(x) === JSON.stringify(y)
+}
+
+function removeFromArray(arr, toDelete){
+    return arr.filter(target => {!valueCompare(toDelete, target)})
+}
+
+const exampleArray = [a, b, b, c, a, {'field': 2}, {'field': 90}];
+const resultArray = removeFromArray(exampleArray, a);
+
+//resultArray = [{'field':90}]",
+    question_id: 2,
+    author_id: 3
   }
 ])
 
