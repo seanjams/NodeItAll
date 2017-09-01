@@ -63,9 +63,8 @@ sample_questions = Question.create([
   {
     title: "How to redirect to another webpage?",
     body: "How can I redirect the user from one page to another using JavaScript or jQuery?",
-    authorId: 1,
+    author_id: 1,
   },
-
 
   # {
   #   title: "Why do fools fall in love?",

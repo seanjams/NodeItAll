@@ -50,20 +50,22 @@
 
 .plain-code-container {
   display: flex;
+  flex-direction: column;
 
   p {
-    margin: 10px 0px;
-    flex: 11;
+    margin: 10px;
+    // flex: 11;
     font-size: 14px;
   }
 
   .code-box {
     margin: 10px 0px;
-    flex: 9;
-    max-width: 45%;
+    // flex: 9;
+    // max-width: 45%;
     code {
       border-radius: 5px;
       margin-left: 30px;
+      margin-right: 30px;
     }
   }
 }
