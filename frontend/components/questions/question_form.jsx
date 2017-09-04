@@ -10,10 +10,12 @@ class QuestionForm extends React.Component {
       plain: "",
       code: "",
       author_id: -1,
-      username: ""
+      username: "",
+      language: "javascript"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.formatBody = this.formatBody.bind(this);
+    this.selectLanguage = this.selectLanguage.bind(this);
   }
 
   componentDidMount() {
@@ -70,6 +72,11 @@ class QuestionForm extends React.Component {
     return body;
   }
 
+  selectLanguage(e) {
+    e.preventDefault();
+    this.setState({language: e.target.value});
+  }
+
   render() {
     return (
       <div className="form">
@@ -79,19 +86,24 @@ class QuestionForm extends React.Component {
           <input type="text"
             value={this.state.title}
             onChange={this.update('title')}
-            placeholder="What's your question?"
+            placeholder="what's your question?"
             className="title" />
           <div className="body-form">
             <textarea className="plain" wrap="soft" cols="20"
               value={this.state.plain}
               onChange={this.update('plain')}
-              placeholder="Plain Text Goes Here" />
+              placeholder="plain text goes here" />
             <div className="code">
+              <select onChange={this.selectLanguage} value={this.state.language}>
+                  <option value="javascript">Javascript</option>
+                  <option value="java">Java</option>
+                  <option value="ruby">Ruby</option>
+               </select>
               <textarea wrap="soft" cols="20"
                 onChange={this.update('code')}
-                placeholder="Javascript Goes Here"
+                placeholder={`${this.state.language} goes here`}
                 className="code-text" />
-              <Highlight lang={"javascript"}
+              <Highlight lang={this.state.language}
                 value={this.state.code}
                 className="highlight" />
             </div>
