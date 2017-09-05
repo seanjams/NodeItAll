@@ -33,9 +33,20 @@ class QuestionForm extends React.Component {
   }
 
   update(property) {
-    return e => this.setState({
-      [property]: e.currentTarget.value
-    });
+    return e => {
+      // console.log(e.key);
+      // let val = e.target.value;
+      // if (e.keyCode === 9) {
+      //   let start = e.target.selectionStart;
+      //   let end = e.target.selectionEnd;
+      //   val = val.substring(0, start) + '\t' + val.substring(end);
+      //   e.target.selectionStart = e.target.selectionEnd = start + 1;
+      // }
+
+      this.setState({
+        [property]: val
+      })
+    };
   }
 
   handleSubmit(e) {
