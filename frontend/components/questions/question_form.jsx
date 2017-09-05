@@ -1,5 +1,6 @@
 import React from 'react';
 import Highlight from 'react-syntax-highlight';
+import { languages } from '../../util/codebox_languages';
 
 class QuestionForm extends React.Component {
 
@@ -77,6 +78,13 @@ class QuestionForm extends React.Component {
     this.setState({language: e.target.value});
   }
 
+  renderOptions() {
+    const displayText = Object.keys(languages);
+    return Object.values(languages).map((lang, i) => (
+      <option value={lang} key={`lang-${i}`}>{ displayText[i] }</option>
+    ));
+  }
+
   render() {
     return (
       <div className="form">
@@ -94,17 +102,18 @@ class QuestionForm extends React.Component {
               onChange={this.update('plain')}
               placeholder="plain text goes here" />
             <div className="code">
-              <select onChange={this.selectLanguage} value={this.state.language}>
-                  <option value="javascript">Javascript</option>
-                  <option value="java">Java</option>
-                  <option value="ruby">Ruby</option>
-               </select>
+              <select onChange={this.selectLanguage}
+                value={this.state.language}>
+                { this.renderOptions() }
+              </select>
               <textarea wrap="soft" cols="20"
                 onChange={this.update('code')}
-                placeholder={`${this.state.language} goes here`}
+                placeholder="code goes here"
                 className="code-text" />
               <Highlight lang={this.state.language}
-                value={this.state.code}
+                value={
+                  this.state.code == "" ? "Preview" : this.state.code
+                }
                 className="highlight" />
             </div>
           </div>

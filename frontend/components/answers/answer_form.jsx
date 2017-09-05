@@ -1,5 +1,6 @@
 import React from 'react';
 import Highlight from 'react-syntax-highlight';
+import { languages } from '../../util/codebox_languages';
 
 class AnswerForm extends React.Component {
   constructor(props) {
@@ -9,9 +10,11 @@ class AnswerForm extends React.Component {
       code: "",
       author_id: -1,
       question_id: -1,
-      username: ""
+      username: "",
+      language: "javascript"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.selectLanguage = this.selectLanguage.bind(this);
   }
 
   componentDidMount() {
@@ -65,6 +68,18 @@ class AnswerForm extends React.Component {
     }
   }
 
+  selectLanguage(e) {
+    e.preventDefault();
+    this.setState({language: e.target.value});
+  }
+
+  renderOptions() {
+    const displayText = Object.keys(languages);
+    return Object.values(languages).map((lang, i) => (
+      <option value={lang} key={`lang-${i}`}>{ displayText[i] }</option>
+    ));
+  }
+
   render() {
     return (
       <div className="form">
@@ -75,14 +90,20 @@ class AnswerForm extends React.Component {
               <textarea className="plain" wrap="soft" cols="20"
                 value={this.state.plain}
                 onChange={this.update('plain')}
-                placeholder="Plain Text Goes Here" />
+                placeholder="plain text goes here" />
               <div className="code">
+                <select onChange={this.selectLanguage}
+                  value={this.state.language}>
+                  { this.renderOptions() }
+                </select>
                 <textarea wrap="soft" cols="20"
                   onChange={this.update('code')}
-                  placeholder="Javascript Goes Here"
+                  placeholder="code goes here"
                   className="code-text" />
-                <Highlight lang={"javascript"}
-                  value={this.state.code}
+                <Highlight lang={this.state.language}
+                  value={
+                    this.state.code == "" ? "Preview" : this.state.code
+                  }
                   className="highlight" />
               </div>
             </div>

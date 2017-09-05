@@ -19,24 +19,12 @@
   .question-detail {
     flex: 7;
     justify-content: space-around;
-
-    p {
-      margin-left: 16px;
-    }
   }
 
   .title {
     font-size: 32px;
   }
 }
-
-// .plain-code-container.solo {
-//   p {
-//     max-width: 100%;
-//   }
-// }
-
-
 
 .question-detail {
   display: flex;
@@ -88,8 +76,8 @@
       border-right: 1px solid $blue;
       padding: 5px 20px 20px 20px;
       flex: 7;
-
       max-width: 81%;
+
       p {
         word-wrap: break-word;
         display: block;
@@ -111,7 +99,7 @@
   flex-direction: column;
 
   p {
-    margin: 10px;
+    margin: 20px;
     font-size: 14px;
   }
 
@@ -120,8 +108,8 @@
 
     code {
       border-radius: 5px;
-      margin-left: 30px;
-      margin-right: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
     }
   }
 }
@@ -145,5 +133,5 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin: 10px 20px 0px 0px;
 }

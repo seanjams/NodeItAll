@@ -32,7 +32,6 @@ class QuestionDetail extends React.Component {
       const body = answer ? answer.body.split("~~$$~~") : ["",""];
       const plain = body[0];
       const code = body[1] || "";
-      const isSolo = code === "" ? code : "solo";
       return (
         <li key={`answer-${q}-${a}`}>
           <VoteBoxContainer item={answer} itemType="Answer" />
@@ -40,7 +39,7 @@ class QuestionDetail extends React.Component {
             <div className="author-info">
               <p><span className="username">{answer.username}</span> {answer.time} ago</p>
             </div>
-            <div className={`plain-code-container ${isSolo}`}>
+            <div className="plain-code-container">
               <p>{plain}</p>
               { this.renderCodeBox(code) }
             </div>
@@ -89,7 +88,6 @@ class QuestionDetail extends React.Component {
     const body = question ? question.body.split("~~$$~~") : ["",""];
     const plain = body[0];
     const code = body[1] || "";
-    const isSolo = code === "" ? code : "solo";
     let active = false;
 
     if (!question) {
@@ -109,7 +107,7 @@ class QuestionDetail extends React.Component {
                 <p><span className="username">{question.username}</span> {question.time} ago</p>
               </div>
               <h1 className="title">{question.title}</h1>
-              <div className={`plain-code-container ${isSolo}`}>
+              <div className="plain-code-container">
                 <p>{plain}</p>
                 { this.renderCodeBox(code) }
               </div>
