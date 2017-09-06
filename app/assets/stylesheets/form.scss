@@ -22,6 +22,28 @@
   input:hover {
     background: $light-gray;
   }
+
+  select {
+    background: $lightest-gray;
+    background-image: url(http://i62.tinypic.com/15xvbd5.png);
+    border: none;
+    border-bottom: 1px solid $blue;
+    border-right: 1px solid $blue;
+    background-position: 94% center;
+    background-repeat: no-repeat;
+    color: $dark-gray;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    -webkit-transition-duration: 0.2s;
+  }
+
+  select:hover {
+    background: $light-gray;
+    background-image: url(http://i62.tinypic.com/15xvbd5.png);
+    background-position: 94% center;
+    background-repeat: no-repeat;
+  }
 }
 
 .auth-form, .question-form, .answer-form {
@@ -85,19 +107,6 @@
     code {
       height: 100%;
     }
-  }
-
-  select {
-    background-image: url(http://i62.tinypic.com/15xvbd5.png);
-    border: none;
-    border-bottom: 1px solid $blue;
-    border-right: 1px solid $blue;
-    background-position: 94% center;
-    background-repeat: no-repeat;
-    color: $dark-gray;
-    font-family: 'Montserrat', sans-serif;
-    padding: 5px 10px;
-    margin-bottom: 10px;
   }
 
   textarea {

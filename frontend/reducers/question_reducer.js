@@ -6,7 +6,12 @@ import { RECEIVE_QUESTIONS,
         QUESTION_ERROR,
         REMOVE_QUESTION_ERRORS } from '../actions/question_actions';
 
-const questionReducer = (state = {errors: []}, action) => {
+const nullState = () => Object.freeze({
+  currentQuestion: null,
+  errors: []
+});
+
+const questionReducer = (state = nullState(), action) => {
   Object.freeze(state);
   let nextState = merge({}, state);
   let increment = 0;
@@ -14,10 +19,13 @@ const questionReducer = (state = {errors: []}, action) => {
 
   switch (action.type) {
   case RECEIVE_QUESTIONS:
-    return Object.assign({}, action.questions, {errors: []});
+    return Object.assign({}, action.questions, {
+      currentQuestion: null,
+      errors: []
+    });
   case RECEIVE_QUESTION:
     return merge({}, state, {
-      [action.question.id]: action.question
+      currentQuestion: action.question
     });
   case REMOVE_QUESTION:
     delete nextState[action.question.id];

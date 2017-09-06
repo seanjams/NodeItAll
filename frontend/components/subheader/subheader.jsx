@@ -13,20 +13,28 @@ class Subheader extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { formType } = nextProps;
-    const typePresent =
-      ["recent", "trending", "results"].includes(formType);
-    if (formType !== "results") {
-      this.props.requestAllQuestions();
-    }
-    const newState = merge({
-      recent: "",
-      trending: "",
-      results: ""
-    }, {
-      [typePresent ? formType : "recent"] : "you-are-here"
-    });
-    this.setState(newState);
+    // if (nextProps.currentQuestion) {
+      const { formType } = nextProps;
+      const isTypePresent = [
+        "recent",
+        "trending",
+        "results"
+      ].includes(formType);
+
+      if (formType !== "results" && formType[0] !== 'q') {
+        this.props.requestAllQuestions();
+      }
+
+      const newState = merge({
+          recent: "",
+          trending: "",
+          results: ""
+        }, {
+          [isTypePresent ? formType : "recent"] : "you-are-here"
+        }
+      );
+      this.setState(newState);
+    // }
   }
 
   componentDidMount() {
@@ -60,28 +68,20 @@ class Subheader extends React.Component {
     }
   }
 
-  renderQuestionTabs() {
-    return (
-      <div className="subheader-container">
-        <h1>Questions</h1>
-        <div className="question-tabs">
-          { this.renderSearchTab() }
-          <Link to="/recent"
-            className={`tab ${this.state.recent}`}
-            onClick={() => this.changeTab('recent')}>Most Recent</Link>
-          <Link to="/trending"
-            className={`tab ${this.state.trending}`}
-            onClick={() => this.changeTab('trending')}>Trending</Link>
-        </div>
-      </div>
-    );
-  }
-
   render() {
+    const { currentQuestion } = this.props;
+    let questionTitle, titleClass;
+    if (currentQuestion) {
+      questionTitle = currentQuestion.title;
+      titleClass = "subtitle";
+    } else {
+      questionTitle = "Questions";
+      titleClass = "";
+    }
     return(
       <div className="subheader-container">
         <div className="subtitle-container">
-          <h1>Questions</h1>
+          <h1 className={titleClass}>{ questionTitle }</h1>
         </div>
         <div className="question-tabs">
           { this.renderSearchTab() }

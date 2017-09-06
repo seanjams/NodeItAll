@@ -84,7 +84,7 @@ class QuestionDetail extends React.Component {
   render() {
     const { questionId } = this.props.match.params;
     const { currentUser } = this.props;
-    const question = this.props.questions[questionId];
+    const question = this.props.currentQuestion;
     const body = question ? question.body.split("~~$$~~") : ["",""];
     const plain = body[0];
     const code = body[1] || "";
@@ -104,9 +104,8 @@ class QuestionDetail extends React.Component {
             <VoteBoxContainer item={question} itemType="Question" />
             <div className="question-detail">
               <div className="author-info">
-                <p><span className="username">{question.username}</span> {question.time} ago</p>
+                <p>asked by <span className="username">{question.username}</span> {question.time} ago</p>
               </div>
-              <h1 className="title">{question.title}</h1>
               <div className="plain-code-container">
                 <p>{plain}</p>
                 { this.renderCodeBox(code) }
