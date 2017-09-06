@@ -44,6 +44,17 @@
     background-position: 94% center;
     background-repeat: no-repeat;
   }
+
+  textarea {
+    background-color: $lightest-gray;
+    border-radius: 5px;
+    padding: 5px;
+    -webkit-transition-duration: 0.2s;
+  }
+
+  textarea:hover {
+    background-color: $light-gray;
+  }
 }
 
 .auth-form, .question-form, .answer-form {
@@ -51,7 +62,6 @@
   margin-left: 3%;
   padding: 30px 20px 20px 20px;
   border: 2px solid $purple;
-  border: 2px 4px 4px 2px;
   background: $light-purple;
   border-radius: 10px;
   align-content: center;
@@ -62,6 +72,7 @@
 
 .question-form, .answer-form {
   height: 64vh;
+  min-height: 360px;
 
   h2 {
     font-size: 30px;
@@ -74,10 +85,7 @@
 
 .body-form {
   display: flex;
-  flex-direction: row;
   flex: 10;
-  width: 100%;
-  height: 200%;
 }
 
 .plain {

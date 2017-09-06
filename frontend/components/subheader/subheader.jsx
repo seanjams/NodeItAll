@@ -13,28 +13,26 @@ class Subheader extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // if (nextProps.currentQuestion) {
-      const { formType } = nextProps;
-      const isTypePresent = [
-        "recent",
-        "trending",
-        "results"
-      ].includes(formType);
+    const { formType } = nextProps;
+    const isTypePresent = [
+      "recent",
+      "trending",
+      "results"
+    ].includes(formType);
 
-      if (formType !== "results" && formType[0] !== 'q') {
-        this.props.requestAllQuestions();
+    if (formType !== "results" && formType[0] !== 'q') {
+      this.props.requestAllQuestions();
+    }
+
+    const newState = merge({
+        recent: "",
+        trending: "",
+        results: ""
+      }, {
+        [isTypePresent ? formType : "recent"] : "you-are-here"
       }
-
-      const newState = merge({
-          recent: "",
-          trending: "",
-          results: ""
-        }, {
-          [isTypePresent ? formType : "recent"] : "you-are-here"
-        }
-      );
-      this.setState(newState);
-    // }
+    );
+    this.setState(newState);
   }
 
   componentDidMount() {

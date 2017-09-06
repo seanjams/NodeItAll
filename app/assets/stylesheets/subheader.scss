@@ -1,13 +1,14 @@
 .subheader-container {
-  border-top: 1px solid $purple;
+  // border-top: 1px solid $purple;
   display: flex;
-  align-items: center;
-  z-index: 1;
+  // align-items: baseline;
+  // z-index: 1;
 
   .subtitle-container {
     border-bottom: 2px solid $purple;
     margin-left: 3.6%;
     margin-right: 5.4%;
+    min-height: 72px;
     flex: 3;
   }
 
@@ -23,25 +24,25 @@
     font-size: 28px;
   }
 
-  .tab:hover {
-    background: $light-gray;
-  }
-
   .tab {
     position: relative;
-    top: -32px;
+    top: 32px;
     right: 7%;
+    height: 20px;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
     padding: 5px 10px;
     -webkit-transition-duration: 0.25s;
+  }
+
+  .tab:hover {
+    background: $light-gray;
   }
 
   .question-tabs {
     flex: 2;
     display: flex;
     .tab {
-      top: -53px;
+      // top: -53px;
     }
 
     .tab:last-child {
@@ -50,10 +51,10 @@
   }
 
   .you-are-here {
-    border-top: 2px solid $orange;
-    border-left: 1px solid $purple;
-    border-right: 1px solid $purple;
-    border-style: outset;
-    border-bottom: 3px solid $lightest-gray;
+    // border-top: 2px solid $orange;
+    // border-left: 1px solid $purple;
+    // border-right: 1px solid $purple;
+    // border-style: outset;
+    // border-bottom: 3px solid $lightest-gray;
   }
 }
