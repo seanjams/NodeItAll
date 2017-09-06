@@ -44,7 +44,7 @@ class QuestionForm extends React.Component {
       // }
 
       this.setState({
-        [property]: val
+        [property]: e.target.value
       })
     };
   }
