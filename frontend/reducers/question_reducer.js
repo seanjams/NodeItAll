@@ -24,16 +24,18 @@ const questionReducer = (state = nullState(), action) => {
       errors: []
     });
   case RECEIVE_QUESTION:
-    return merge({}, state, {
-      currentQuestion: action.question
+    const { question } = action;
+    return merge(nextState, {
+      [question.id]: question,
+      currentQuestion: question
     });
   case REMOVE_QUESTION:
     delete nextState[action.question.id];
-    return nextState;
+    return merge(nextState, {currentQuestion: null});
   case QUESTION_ERROR:
-    return merge({}, state, {errors: action.errors});
+    return merge(nextState, {errors: action.errors});
   case REMOVE_QUESTION_ERRORS:
-    return Object.assign({}, state, {errors: []});
+    return Object.assign(nextState, {errors: []});
   case RECEIVE_VOTE:
     vote = action.vote;
     if (vote.itemType === "Question") {

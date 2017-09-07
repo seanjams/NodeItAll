@@ -14,7 +14,7 @@
     font-family: 'Oleo Script Swash Caps', cursive;
     color: $purple;
     font-size: 36px;
-    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
   }
 
   .home-link:hover {
@@ -41,7 +41,7 @@
         border-radius: 3px;
         display: inline;
         width: 200px;
-        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
       }
 
       input:hover {

@@ -10,8 +10,6 @@ const voteReducer = (state = {errors: []}, action) => {
   const nextState = merge({}, state);
 
   switch (action.type) {
-  // case RECEIVE_VOTES:
-  //   return merge({}, state, action.votes);
   case RECEIVE_VOTE:
     return merge({}, state, {
       [action.vote.id]: action.vote

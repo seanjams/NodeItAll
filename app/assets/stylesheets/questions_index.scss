@@ -3,12 +3,17 @@
   margin-right: 3%;
 
   .questions-index {
-    border-radius: 5px;
-    background: $light-gray;
+    // background: $light-gray;
 
     .question-index-item {
-      border-bottom: 1px solid $purple;
+      background: $light-gray;
+      margin: 20px 0px;
+      // -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      // -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.5);
+      transition: all .15s ease-in-out;
     }
+    .question-index-item:hover { transform: scale(1.01); }
   }
 }
 
