@@ -45,12 +45,6 @@ class NavBar extends React.Component {
     this.props.clearSessionErrors();
   }
 
-  handleGuest() {
-    if (this.props.questionId > 0) {
-      this.props.requestSingleQuestion(this.props.questionId);
-    }
-  }
-
   navHome() {
     this.props.history.push("/");
   }

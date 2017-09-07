@@ -84,7 +84,7 @@ class QuestionDetail extends React.Component {
   render() {
     const { questionId } = this.props.match.params;
     const { currentUser } = this.props;
-    const question = this.props.currentQuestion;
+    const question = this.props.questions[questionId];
     const body = question ? question.body.split("~~$$~~") : ["",""];
     const plain = body[0];
     const code = body[1] || "";

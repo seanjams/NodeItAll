@@ -10,7 +10,7 @@ import QuestionDetail from './question_detail';
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
   answers: selectAnswers(state),
-  currentQuestion: state.questions.currentQuestion
+  questions: state.questions
 });
 
 const mapDispatchToProps = dispatch => ({
