@@ -19,21 +19,21 @@ class NavBar extends React.Component {
     };
     if (currentUser) {
       return (
-        <button className="button session-button" onClick={logout}>
+        <button className="button session-link" onClick={logout}>
           Log Out
         </button>
       );
     } else {
       return (
-        <div className="session-links">
+        <div className="session-links login">
           <Link to="/signup"
-            className="button session-button"
+            className="button session-link login"
             onClick={this.handleClick}>Sign Up</Link>
           <Link to="/login"
-            className="button session-button"
+            className="button session-link login"
             onClick={this.handleClick}>Log In</Link>
           <button onClick={() => login(sampleUser)}
-            className="button session-button">
+            className="button session-link login">
               Guest Log In
           </button>
         </div>

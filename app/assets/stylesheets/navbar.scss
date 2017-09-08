@@ -1,9 +1,9 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  background: $light-blue;
+  background: $blue1;
   align-items: center;
-  border-bottom: 1px solid $blue;
+  // border-bottom: 1px solid $blue1;
   // position: fixed;
   // z-index: 2;
 
@@ -12,14 +12,14 @@
     margin-left: 20px;
     text-decoration: none;
     font-family: 'Oleo Script Swash Caps', cursive;
-    color: $purple;
+    color: $blue5;
     font-size: 36px;
     transition-duration: 0.4s;
   }
 
   .home-link:hover {
-    background: $light-blue;
-    color: #030705;
+    background: $blue1;
+    color: $green5;
   }
 
   .search-container {
@@ -36,6 +36,7 @@
       input {
         padding: 5px;
         background: $lightest-gray;
+        color: $blue1;
         border-bottom: 1px solid $blue;
         border-right: 1px solid $blue;
         border-radius: 3px;
@@ -72,12 +73,16 @@
     justify-content: flex-end;
   }
 
-  .session-button {
+  .session-link {
     margin: 0px 10px;
   }
 
-  .session-button:hover {
-    background: $light-orange;
-    color: $dark-blue;
+  .login.button {
+    color: $green2;
+  }
+
+  .login.button:hover {
+    background: $green4;
+    color: $lightest-gray;
   }
 }

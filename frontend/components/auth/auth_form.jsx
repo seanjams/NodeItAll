@@ -68,7 +68,7 @@ class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.update('password')}
           placeholder="Password"/>
-        <div className="button-container">
+        <div className="submit-button-container">
           <button className="button">Log In</button>
         </div>
       </form>
@@ -92,7 +92,7 @@ class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.update('password')}
           placeholder="Password"/>
-        <div className="button-container">
+        <div className="submit-button-container">
           <button className="button">Sign Up</button>
         </div>
       </form>

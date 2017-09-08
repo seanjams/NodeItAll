@@ -8,6 +8,7 @@
 
 header {
   background: $lightest-gray;
+  color: $blue5;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -37,7 +38,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   font-family: 'Montserrat', sans-serif;
-  color: $dark-blue;
+  color: $blue1;
   background: $lightest-gray;
 }
 
@@ -52,14 +53,13 @@ code {
 
 .button {
   padding: 5px 10px;
-  border: 2px solid $blue;
   border-radius: 5px;
   background: $lightest-gray;
-  color: $orange;
   transition-duration: 0.25s;
+  color: $red4;
 }
 
 .button:hover {
-  background: $purple;
+  background: $red4;
   color: $lightest-gray;
 }

@@ -107,7 +107,7 @@ class AnswerForm extends React.Component {
                   className="highlight" />
               </div>
             </div>
-          <div className="button-container">
+          <div className="submit-button-container">
             <button className="button">Submit</button>
           </div>
         </form>

@@ -5,7 +5,7 @@
     text-align: center;
     margin-bottom: 40px;
     font-family: 'Oleo Script Swash Caps', cursive;
-    color: $purple;
+    color: $blue4;
   }
 
   input {
@@ -62,9 +62,11 @@
   margin-right: 6%;
   margin-left: 3%;
   padding: 30px 20px 20px 20px;
-  border: 2px solid $purple;
-  background: $light-purple;
-  border-radius: 10px;
+  box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.5);
+  transition: all .15s ease-in-out;
+  background: $light-blue;
+  border-bottom: 1px solid $blue;
+  border-right: 1px solid $blue;
   align-content: center;
   display: flex;
   flex-direction: column;
@@ -80,7 +82,7 @@
     flex: 1;
     text-align: center;
     font-family: 'Oleo Script Swash Caps', cursive;
-    color: $purple;
+    color: $blue4;
   }
 }
 
@@ -123,21 +125,20 @@
   }
 }
 
-.button-container {
+.submit-button-container {
   display: flex;
   justify-content: flex-end;
   align-items: baseline;
   width: 100%;
 
   .button {
-    margin-top: 10px;
-    margin-right: 0.5em;
-    height: 20px;
+    margin: 10px 10px 0px 0px;
+    color: $green2;
   }
 
   .button:hover {
-    background: $light-orange;
-    color: $dark-blue;
+    background: $green4;
+    color: $lightest-gray;
   }
 }
 

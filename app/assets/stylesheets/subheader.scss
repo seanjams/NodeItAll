@@ -5,7 +5,7 @@
   // z-index: 1;
 
   .subtitle-container {
-    border-bottom: 2px solid $purple;
+    border-bottom: 2px solid $red4;
     margin-left: 3.6%;
     margin-right: 5.4%;
     min-height: 72px;
@@ -13,7 +13,7 @@
   }
 
   h1 {
-    color: $purple;
+    color: $blue1;
     background-color: $lightest-gray;
     font-size: 42px;
     position: relative;
@@ -33,6 +33,7 @@
     text-decoration: none;
     padding: 5px 10px;
     transition-duration: 0.25s;
+    color: $blue1;
   }
 
   .tab:hover {
@@ -52,6 +53,7 @@
   }
 
   .you-are-here {
+    background: $light-gray;
     // border-top: 2px solid $orange;
     // border-left: 1px solid $purple;
     // border-right: 1px solid $purple;
