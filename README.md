@@ -29,6 +29,8 @@
 
 Users are prompted with a form containing fields for Username, Email, and Password. If a user has visited before, they can log in with either their username or email in the same field. The password must be at least 8 characters, and is stored in the database as a salted/hashed digest using BCrypt. Salting prevents the database from containing the same random string as a digest, despite users potentially having the same passwords.
 
+![login](/app/assets/images/login.gif)
+
 ``` javascript
 export const login = user => (
   $.ajax({
@@ -37,11 +39,25 @@ export const login = user => (
     data: {user}
   })
 );
-
 ```
 
-![login](/app/assets/images/login.png)
-
+``` javascript
+def create
+  @user = User.find_by_credentials(
+    params[:user][:username],
+    params[:user][:password]
+  )
+  if @user
+    login(@user)
+    render :show
+  else
+    render(
+      json: ["Invalid Username or Password"],
+      status: 401
+    )
+  end
+end
+```
 
 ### Ask a Question
 
