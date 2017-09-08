@@ -100,6 +100,7 @@ class QuestionDetail extends React.Component {
       }
       return (
         <div className="question-answer-container">
+          <h1 className="spacer">{ question.title }</h1>
           <div className="question-box">
             <VoteBoxContainer item={question} itemType="Question" />
             <div className="question-detail">
