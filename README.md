@@ -1,6 +1,6 @@
 # NodeItAll
 
-[NodeItAll](https://nodeitall.herokuapp.com/#/) is a full stack web application inspired by Stack Overflow, in which users can ask and answer tech related questions or share their ideas with others in the NodeItAll community. The frontend is built on React/Redux with a Ruby on Rails backend. Anyone visiting can search the database of questions. Upon signing up, a user can ask questions, answer questions, and vote up or down other questions and answers. The question and answer forms come complete with syntax highlighting for code snippets.
+[NodeItAll](https://nodeitall.co/) is a full stack web application inspired by Stack Overflow, in which users can ask and answer tech related questions or share their ideas with others in the NodeItAll community. The frontend is built on React/Redux with a Ruby on Rails backend. Anyone visiting can search the database of questions. Upon signing up, a user can ask questions, answer questions, and vote up or down other questions and answers. The question and answer forms come complete with syntax highlighting for code snippets.
 
 ## Features
 
@@ -41,7 +41,7 @@ export const login = user => (
 );
 ```
 
-``` javascript
+``` ruby
 def create
   @user = User.find_by_credentials(
     params[:user][:username],
@@ -61,33 +61,36 @@ end
 
 ### Ask a Question
 
-Ask a question, see if others can help!
+Use the form and code box to ask and answer questions, see if others can help!
 
-![question](/app/assets/images/new_question.png)
+![question](/app/assets/images/new_question.gif)
 
 ### Search for a Question
 
 Search the database for keywords or code.
 
-![search](/app/assets/images/search.png)
-
-### Answer Questions
-
-Answer a question to help someone else in the community.
-
-![answer](/app/assets/images/new_answer.png)
+![search](/app/assets/images/search.gif)
 
 ### Vote on Questions/Answers
 
-Vote on the questions and answers you find helpful.
+Vote on the questions and answers you find helpful. Votes can belong to both questions and answers thanks to a polymorphic association on the Model level.
 
-![votes](/app/assets/images/votes.png)
+``` ruby
+class Vote < ApplicationRecord
+  validates :item_id, :item_type, :user_id, presence: true
+  validates :user_id, uniqueness: {scope: [:item_type, :item_id]}
+  validates_inclusion_of :item_type, in: ["Question", "Answer"]
+  validates_inclusion_of :upvote, in: [true, false]
+
+  belongs_to :user
+  belongs_to :item, polymorphic: true
+
+end
+```
+
+![votes](/app/assets/images/votes.gif)
 
 ## In the making...
-
-#### Languages
-
-I am working on including syntax highlighting for all common languages.
 
 #### User Questions/Page
 
