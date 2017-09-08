@@ -20,7 +20,7 @@
 - React.js
 - Redux
 - PostgreSQL
-- React Highlight (highlight.js)
+- React Syntax Highlight (highlight.js)
 - jQuery
 - jBuilder
 - SASS
