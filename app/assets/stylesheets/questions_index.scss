@@ -5,7 +5,7 @@
   .questions-index {
 
     .question-index-item {
-      background: $gray;
+      background: $light-gray;
       border-bottom: 1px solid $dark-gray;
       border-right: 1px solid $dark-gray;
       margin: 20px 0px;
@@ -14,7 +14,11 @@
       box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.5);
       transition: all .15s ease-in-out;
     }
-    .question-index-item:hover { transform: scaleY(1.05); }
+
+    .question-index-item:hover {
+      transform: scaleY(1.05);
+      background: $gray;
+    }
   }
 }
 
