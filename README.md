@@ -29,6 +29,17 @@
 
 Users are prompted with a form containing fields for Username, Email, and Password. If a user has visited before, they can log in with either their username or email in the same field. The password must be at least 8 characters, and is stored in the database as a salted/hashed digest using BCrypt. Salting prevents the database from containing the same random string as a digest, despite users potentially having the same passwords.
 
+``` javascript
+export const login = user => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/session',
+    data: {user}
+  })
+);
+
+```
+
 ![login](/app/assets/images/login.png)
 
 
