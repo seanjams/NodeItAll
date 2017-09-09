@@ -70,13 +70,13 @@ class Subheader extends React.Component {
     if (!this.props.currentQuestion) {
       return (
         <div className="question-tabs">
+          { this.renderSearchTab() }
           <Link to="/recent"
             className={`tab ${this.state.recent}`}
             onClick={this.changeTab('recent')}>Most Recent</Link>
           <Link to="/trending"
             className={`tab ${this.state.trending}`}
             onClick={this.changeTab('trending')}>Trending</Link>
-          { this.renderSearchTab() }
         </div>
       );
     }
@@ -96,8 +96,8 @@ class Subheader extends React.Component {
       <div className="subheader-container">
         <div className="subtitle-container">
           <h1 className={titleClass}>{ questionTitle }</h1>
+          { this.renderTabs() }
         </div>
-        { this.renderTabs() }
       </div>
     )
   }

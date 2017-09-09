@@ -10,8 +10,6 @@
 
 .question-box {
   background: $gray;
-  margin-left: 6%;
-  margin-right: 3%;
   border-bottom: 1px solid $dark-gray;
   border-right: 1px solid $dark-gray;
   box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.5);
@@ -66,12 +64,12 @@
 
 .answers-container {
   list-style: none;
-  margin-right: 3%;
+  // margin-right: 3%;
 
   li {
     display: flex;
     margin: 30px 0px;
-    margin-left: 6%;
+    // margin-left: 6%;
 
     .vote-box {
       flex: 1;
@@ -109,7 +107,7 @@
   flex-direction: column;
 
   p {
-    margin: 20px;
+    margin: 20px 0px;
     font-size: 14px;
   }
 
@@ -118,8 +116,8 @@
 
     code {
       border-radius: 5px;
-      margin-left: 20px;
-      margin-right: 20px;
+      // margin-left: 20px;
+      // margin-right: 20px;
     }
   }
 }

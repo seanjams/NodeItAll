@@ -1,16 +1,12 @@
 .subheader-container {
-  // border-top: 1px solid $purple;
-  display: flex;
-  // align-items: baseline;
-  // z-index: 1;
 
   .subtitle-container {
     border-bottom: 2px solid $red4;
-    margin-left: 3.6%;
-    margin-right: 5.4%;
-    max-width: 54.6%;
+    width: 59%;
     min-height: 72px;
     flex: 3;
+    display: flex;
+    justify-content: space-between;
   }
 
   h1 {
@@ -19,6 +15,7 @@
     font-size: 42px;
     position: relative;
     padding: 10px 0px;
+    flex: 1;
   }
 
   .subtitle{
@@ -29,7 +26,6 @@
   .tab {
     position: relative;
     top: 32px;
-    right: 7%;
     height: 20px;
     text-decoration: none;
     padding: 5px 10px;
@@ -44,21 +40,10 @@
   .question-tabs {
     flex: 2;
     display: flex;
-    .tab {
-      // top: -53px;
-    }
-
-    .tab:last-child {
-      // margin-right: 50px;
-    }
+    justify-content: flex-end;
   }
 
   .you-are-here {
     background: $light-gray;
-    // border-top: 2px solid $orange;
-    // border-left: 1px solid $purple;
-    // border-right: 1px solid $purple;
-    // border-style: outset;
-    // border-bottom: 3px solid $lightest-gray;
   }
 }
