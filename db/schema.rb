@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170721071205) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "body",        null: false
+    t.string   "lang",        null: false
     t.integer  "question_id", null: false
     t.integer  "author_id",   null: false
     t.datetime "created_at",  null: false
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170721071205) do
   create_table "questions", force: :cascade do |t|
     t.string   "title",      null: false
     t.string   "body",       null: false
+    t.string   "lang",       null: false
     t.integer  "author_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

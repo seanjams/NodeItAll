@@ -41,7 +41,7 @@ class QuestionDetail extends React.Component {
             </div>
             <div className="plain-code-container">
               <p>{plain}</p>
-              { this.renderCodeBox(code) }
+            { this.renderCodeBox(code, answer.lang) }
             </div>
             { active ? this.renderDelete(id, "answer", questionId) : "" }
           </div>
