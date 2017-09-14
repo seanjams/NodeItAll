@@ -3,6 +3,7 @@ class CreateQuestions < ActiveRecord::Migration[5.0]
     create_table :questions do |t|
       t.string :title, null: false
       t.string :body, null: false
+      t.sting :lang, null: false
       t.integer :author_id, null: false, foreign_key: true
 
       t.timestamps
