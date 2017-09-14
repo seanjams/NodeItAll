@@ -63,6 +63,7 @@ sample_questions = Question.create([
   {
     title: "How to redirect to another webpage?",
     body: "How can I redirect the user from one page to another using JavaScript or jQuery?",
+    lang: "javascript",
     author_id: 1,
   },
   {
@@ -72,6 +73,7 @@ sample_questions = Question.create([
     Is there a simple way to remove a specific element from an array? The equivalent of something like  array.remove(int);.
 
     I have to use core JavaScript - no frameworks are allowed.",
+    lang: "javascript",
     author_id: 4,
   },
 
