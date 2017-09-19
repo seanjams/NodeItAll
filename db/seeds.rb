@@ -63,6 +63,7 @@ sample_questions = Question.create([
   {
     title: "How to redirect to another webpage?",
     body: "How can I redirect the user from one page to another using JavaScript or jQuery?",
+    lang: "javascript",
     author_id: 1,
   },
   {
@@ -72,6 +73,7 @@ sample_questions = Question.create([
     Is there a simple way to remove a specific element from an array? The equivalent of something like  array.remove(int);.
 
     I have to use core JavaScript - no frameworks are allowed.",
+    lang: "javascript",
     author_id: 4,
   },
 
@@ -107,6 +109,7 @@ sample_questions = Question.create([
 sample_answers = Answer.create([
   {
     body: "One does not simply redirect using jQuery, jQuery is not necessary, and window.location.replace(...) will best simulate an HTTP redirect. window.location.replace(...) is better than using window.location.href, because replace() does not keep the originating page in the session history, meaning the user won't get stuck in a never-ending back-button fiasco. If you want to simulate someone clicking on a link, use location.href. If you want to simulate an HTTP redirect, use location.replace~~$$~~// similar behavior as an HTTP redirect\nwindow.location.replace('http://nodeitall.com');\n// similar behavior as clicking on a link\nwindow.location.href = 'http://nodeitall.com';",
+    lang: "javascript",
     question_id: 1,
     author_id: 5
   },
@@ -137,6 +140,7 @@ const exampleArray = [a, b, b, c, a, {'field': 2}, {'field': 90}];
 const resultArray = removeFromArray(exampleArray, a);
 
 //resultArray = [{'field':90}]",
+    lang: "javascript",
     question_id: 2,
     author_id: 3
   }

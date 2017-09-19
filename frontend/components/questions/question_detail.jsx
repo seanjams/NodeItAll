@@ -41,7 +41,7 @@ class QuestionDetail extends React.Component {
             </div>
             <div className="plain-code-container">
               <p>{plain}</p>
-              { this.renderCodeBox(code) }
+            { this.renderCodeBox(code, answer.lang) }
             </div>
             { active ? this.renderDelete(id, "answer", questionId) : "" }
           </div>
@@ -71,10 +71,10 @@ class QuestionDetail extends React.Component {
     );
   }
 
-  renderCodeBox(code) {
+  renderCodeBox(code, lang) {
     if (code !== "") {
       return (
-        <Highlight lang={"javascript"}
+        <Highlight lang={lang}
           value={code}
           className="code-box" />
       );
@@ -109,7 +109,7 @@ class QuestionDetail extends React.Component {
               </div>
               <div className="plain-code-container">
                 <p>{plain}</p>
-                { this.renderCodeBox(code) }
+              { this.renderCodeBox(code, question.lang) }
               </div>
               { active ? this.renderDelete(question.id, "question") : "" }
             </div>

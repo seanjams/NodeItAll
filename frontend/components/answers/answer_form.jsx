@@ -43,6 +43,7 @@ class AnswerForm extends React.Component {
     this.props.clearAnswerErrors();
     const newAnswer = {
       body: this.formatBody(),
+      lang: this.state.language,
       author_id: this.state.author_id,
       question_id: this.state.question_id,
       username: this.state.username,

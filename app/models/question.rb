@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  validates :title, :body, presence: true
+  validates :title, :body, :lang, presence: true
 
   has_many :answers, dependent: :destroy
   has_many :votes, as: :item, dependent: :destroy

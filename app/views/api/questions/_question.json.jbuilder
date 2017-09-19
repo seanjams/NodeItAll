@@ -1,4 +1,4 @@
-json.extract! question, :id, :title, :body
+json.extract! question, :id, :title, :body, :lang
 json.authorId question.author_id
 json.username question.author.username
 json.answerCount question.answers.length

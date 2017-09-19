@@ -57,6 +57,7 @@ class QuestionForm extends React.Component {
     const newQuestion = {
       title: this.state.title,
       body: this.formatBody(),
+      lang: this.state.language,
       author_id: this.state.author_id,
       username: this.state.username
     };
