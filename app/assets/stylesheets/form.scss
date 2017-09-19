@@ -17,7 +17,6 @@
     margin: 10px 0px;
     flex: 1;
     transition-duration: 0.2s;
-    // -webkit-transition-duration: 0.2s;
   }
 
   input:hover {
@@ -52,6 +51,7 @@
     border-radius: 5px;
     padding: 5px;
     transition-duration: 0.2s;
+    resize: none;
   }
 
   textarea:hover {
@@ -71,6 +71,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  max-width: 30%;
 }
 
 .question-form, .answer-form {
@@ -97,7 +98,6 @@
   margin: 10px 0px;
   border-bottom: 1px solid $blue;
   border-right: 1px solid $blue;
-  // max-width: 185px;
 }
 
 .code {
@@ -106,7 +106,7 @@
   justify-content: space-between;
   margin: 10px 0px 0px 10px;
   flex: 1;
-  // max-width: 185px;
+  max-width: 47%;
 
   .code-text {
     border-bottom: 1px solid $blue;
@@ -173,6 +173,7 @@
 @media (min-width: 0px) and (max-width: 770px) {
   .auth-form, .question-form, .answer-form {
     position: unset;
+    max-width: 100%;
   }
 }
 
