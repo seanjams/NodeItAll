@@ -86,36 +86,34 @@ class AnswerForm extends React.Component {
     // const { currentQuestion } = this.props;
     // const spacerText = currentQuestion ? currentQuestion.title : "";
     return (
-      <div>
-        <form className="answer-form" onSubmit={ this.handleSubmit }>
-          <h2>Answer This Question</h2>
-          <ul className="error-list">{ this.renderErrors() }</ul>
-            <div className="body-form">
-              <textarea className="plain" wrap="soft" cols="20"
-                value={this.state.plain}
-                onChange={this.update('plain')}
-                placeholder="plain text goes here" />
-              <div className="code">
-                <select onChange={this.selectLanguage}
-                  value={this.state.language}>
-                  { this.renderOptions() }
-                </select>
-                <textarea wrap="soft" cols="20"
-                  onChange={this.update('code')}
-                  placeholder="code goes here"
-                  className="code-text" />
-                <Highlight lang={this.state.language}
-                  value={
-                    this.state.code == "" ? "Preview" : this.state.code
-                  }
-                  className="highlight" />
-              </div>
+      <form className="answer-form" onSubmit={ this.handleSubmit }>
+        <h2>Answer This Question</h2>
+        <ul className="error-list">{ this.renderErrors() }</ul>
+          <div className="body-form">
+            <textarea className="plain" wrap="soft" cols="20"
+              value={this.state.plain}
+              onChange={this.update('plain')}
+              placeholder="plain text goes here" />
+            <div className="code">
+              <select onChange={this.selectLanguage}
+                value={this.state.language}>
+                { this.renderOptions() }
+              </select>
+              <textarea wrap="soft" cols="20"
+                onChange={this.update('code')}
+                placeholder="code goes here"
+                className="code-text" />
+              <Highlight lang={this.state.language}
+                value={
+                  this.state.code == "" ? "Preview" : this.state.code
+                }
+                className="highlight" />
             </div>
-          <div className="submit-button-container">
-            <button className="button">Submit</button>
           </div>
-        </form>
-      </div>
+        <div className="submit-button-container">
+          <button className="button">Submit</button>
+        </div>
+      </form>
     );
   }
 }

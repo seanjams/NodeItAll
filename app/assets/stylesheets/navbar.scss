@@ -3,9 +3,7 @@
   justify-content: space-between;
   background: $blue1;
   align-items: center;
-  // border-bottom: 1px solid $blue1;
-  // position: fixed;
-  // z-index: 2;
+  min-width: 412px;
 
   .home-link {
     flex: 1;
@@ -29,7 +27,7 @@
 
     .search-form {
       .search-button {
-        margin-right: 10px;
+        margin: 0px 10px;
         display: inline;
       }
 
@@ -65,7 +63,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    flex: 2;
+    // flex: 2;
   }
 
   .session-links {
@@ -84,5 +82,23 @@
   .login.button:hover {
     background: $green4;
     color: $lightest-gray;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 770px) {
+  .nav {
+    height: 48px;
+
+    p {
+      font-size: 0px;
+    }
+
+    .home-link {
+      font-size: 28px;
+    }
+
+    .search-container .search-form input{
+      width: 100px;
+    }
   }
 }

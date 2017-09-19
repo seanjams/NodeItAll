@@ -60,6 +60,7 @@
 }
 
 .auth-form, .question-form, .answer-form {
+  position: fixed;
   padding: 30px 20px 20px 20px;
   box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.5);
   transition: all .15s ease-in-out;
@@ -96,7 +97,7 @@
   margin: 10px 0px;
   border-bottom: 1px solid $blue;
   border-right: 1px solid $blue;
-  max-width: 185px;
+  // max-width: 185px;
 }
 
 .code {
@@ -105,7 +106,7 @@
   justify-content: space-between;
   margin: 10px 0px 0px 10px;
   flex: 1;
-  max-width: 185px;
+  // max-width: 185px;
 
   .code-text {
     border-bottom: 1px solid $blue;
@@ -148,7 +149,34 @@
   text-align: center;
 }
 
-@media (min-width: 0px) and (max-width: 1000px) {
+@media (min-width: 771px) and (max-width: 1100px) {
+
+  .auth-form, .question-form, .answer-form {
+    width: 32%
+  }
+
+  .body-form {
+    flex-direction: column;
+  }
+
+  .plain {
+    max-width: 100%;
+    max-height: 20%;
+  }
+
+  .code {
+    margin-left: 0px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 770px) {
+  .auth-form, .question-form, .answer-form {
+    position: unset;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 470px) {
   .body-form {
     flex-direction: column;
   }

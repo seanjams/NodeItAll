@@ -1,6 +1,4 @@
 .questions-index-container {
-  // margin-left: 6%;
-  // margin-right: 3%;
 
   .questions-index {
 
@@ -90,15 +88,14 @@
   }
 }
 
-@media (min-width: 601px) and (max-width: 1000px) {
+@media (min-width: 771px) and (max-width: 1100px) {
   .questions-index {
     margin-left: 20px;
   }
 }
 
-@media (min-width: 0px) and (max-width: 600px) {
+@media (min-width: 0px) and (max-width: 770px) {
   .questions-index {
-    margin-left: 20px;
     padding-top: 32px;
   }
 }
