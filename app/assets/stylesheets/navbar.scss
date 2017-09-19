@@ -63,7 +63,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    // flex: 2;
+    flex: 2;
   }
 
   .session-links {
@@ -97,8 +97,16 @@
       font-size: 28px;
     }
 
-    .search-container .search-form input{
-      width: 100px;
+    .greeting {
+      flex: auto;
+    }
+
+    .search-container {
+      flex: auto;
+
+      .search-form input{
+        width: 100px;
+      }
     }
   }
 }
