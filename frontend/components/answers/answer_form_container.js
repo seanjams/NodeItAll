@@ -3,8 +3,9 @@ import { createAnswer,
         clearAnswerErrors } from '../../actions/answer_actions';
 import AnswerForm from './answer_form';
 
-const mapStateToProps = ({session, answers}) => ({
+const mapStateToProps = ({session, questions, answers}) => ({
   currentUser: session.currentUser,
+  currentQuestion: questions.currentQuestion,
   errors: answers.errors
 });
 

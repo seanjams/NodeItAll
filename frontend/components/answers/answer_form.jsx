@@ -45,7 +45,8 @@ class AnswerForm extends React.Component {
       body: this.formatBody(),
       author_id: this.state.author_id,
       question_id: this.state.question_id,
-      username: this.state.username
+      username: this.state.username,
+      lang: this.state.language
     };
     createAnswer(newAnswer);
     this.setState({
@@ -81,8 +82,10 @@ class AnswerForm extends React.Component {
   }
 
   render() {
+    // const { currentQuestion } = this.props;
+    // const spacerText = currentQuestion ? currentQuestion.title : "";
     return (
-      <div className="form">
+      <div>
         <form className="answer-form" onSubmit={ this.handleSubmit }>
           <h2>Answer This Question</h2>
           <ul className="error-list">{ this.renderErrors() }</ul>

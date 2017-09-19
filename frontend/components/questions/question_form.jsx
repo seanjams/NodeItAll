@@ -98,41 +98,39 @@ class QuestionForm extends React.Component {
 
   render() {
     return (
-      <div className="form">
-        <form className="question-form" onSubmit={ this.handleSubmit }>
-          <h2>New Question</h2>
-          <ul className="error-list">{ this.renderErrors() }</ul>
-          <input type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
-            placeholder="what's your question?"
-            className="title" />
-          <div className="body-form">
-            <textarea className="plain" wrap="soft" cols="20"
-              value={this.state.plain}
-              onChange={this.update('plain')}
-              placeholder="plain text goes here" />
-            <div className="code">
-              <select onChange={this.selectLanguage}
-                value={this.state.language}>
-                { this.renderOptions() }
-              </select>
-              <textarea wrap="soft" cols="20"
-                onChange={this.update('code')}
-                placeholder="code goes here"
-                className="code-text" />
-              <Highlight lang={this.state.language}
-                value={
-                  this.state.code == "" ? "Preview" : this.state.code
-                }
-                className="highlight" />
-            </div>
+      <form className="question-form" onSubmit={ this.handleSubmit }>
+        <h2>New Question</h2>
+        <ul className="error-list">{ this.renderErrors() }</ul>
+        <input type="text"
+          value={this.state.title}
+          onChange={this.update('title')}
+          placeholder="what's your question?"
+          className="title" />
+        <div className="body-form">
+          <textarea className="plain" wrap="soft" cols="20"
+            value={this.state.plain}
+            onChange={this.update('plain')}
+            placeholder="plain text goes here" />
+          <div className="code">
+            <select onChange={this.selectLanguage}
+              value={this.state.language}>
+              { this.renderOptions() }
+            </select>
+            <textarea wrap="soft" cols="20"
+              onChange={this.update('code')}
+              placeholder="code goes here"
+              className="code-text" />
+            <Highlight lang={this.state.language}
+              value={
+                this.state.code == "" ? "Preview" : this.state.code
+              }
+              className="highlight" />
           </div>
-          <div className="submit-button-container">
-            <button className="button">Submit</button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div className="submit-button-container">
+          <button className="button">Submit</button>
+        </div>
+      </form>
     );
   }
 }

@@ -2,12 +2,6 @@
   // margin-top: 30px;
 }
 
-.spacer {
-  // margin-top: 14px;
-  font-size: 28px;
-  color: transparent;
-}
-
 .question-box {
   background: $gray;
   border-bottom: 1px solid $dark-gray;
@@ -143,4 +137,10 @@
   flex-direction: row;
   justify-content: flex-end;
   margin: 10px 20px 0px 0px;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .question-box {
+    margin-left: 20px;
+  }
 }

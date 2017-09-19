@@ -3,7 +3,7 @@
   h1 {
     font-size: 36px;
     text-align: center;
-    margin-bottom: 40px;
+    margin: 40px 0px;
     font-family: 'Oleo Script Swash Caps', cursive;
     color: $blue4;
   }
@@ -74,10 +74,11 @@
 
 .question-form, .answer-form {
   height: 64vh;
-  min-height: 360px;
+  min-height: 400px;
 
   h2 {
     font-size: 30px;
+    margin-top: 20px;
     flex: 1;
     text-align: center;
     font-family: 'Oleo Script Swash Caps', cursive;
@@ -95,6 +96,7 @@
   margin: 10px 0px;
   border-bottom: 1px solid $blue;
   border-right: 1px solid $blue;
+  max-width: 185px;
 }
 
 .code {
@@ -103,8 +105,7 @@
   justify-content: space-between;
   margin: 10px 0px 0px 10px;
   flex: 1;
-  width: 0%;
-  max-width: 44%;
+  max-width: 185px;
 
   .code-text {
     border-bottom: 1px solid $blue;
@@ -130,7 +131,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: baseline;
-  width: 100%;
 
   .button {
     margin-top: 10px;
@@ -146,4 +146,20 @@
 .error-list li {
   color: #f00;
   text-align: center;
+}
+
+@media (min-width: 0px) and (max-width: 1000px) {
+  .body-form {
+    flex-direction: column;
+  }
+
+  .plain {
+    max-width: 100%;
+    max-height: 20%;
+  }
+
+  .code {
+    margin-left: 0px;
+    max-width: 100%;
+  }
 }

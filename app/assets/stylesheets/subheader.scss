@@ -1,4 +1,8 @@
 .subheader-container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
 
   .subtitle-container {
     border-bottom: 2px solid $red4;
@@ -10,15 +14,15 @@
   }
 
   h1 {
+    background: $lightest-gray;
     color: $blue1;
-    background-color: $lightest-gray;
     font-size: 42px;
     position: relative;
     padding: 10px 0px;
     flex: 1;
   }
 
-  .subtitle{
+  .subtitle {
     margin-top: 14px;
     font-size: 28px;
   }
@@ -45,5 +49,32 @@
 
   .you-are-here {
     background: $light-gray;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .subheader-container {
+    border-bottom: 2px solid $red4;
+    display: inline-block;
+    width: 100%;
+
+    .subtitle-container {
+      width: 100%;
+      border: none;
+      flex-direction: column;
+
+      h1 {
+        margin-left: 20px;
+      }
+
+      .tab {
+        top: 0px;
+      }
+
+      .question-tabs {
+        margin-left: 20px;
+        justify-content: flex-start;
+      }
+    }
   }
 }

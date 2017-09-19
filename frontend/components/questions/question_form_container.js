@@ -5,6 +5,7 @@ import QuestionForm from './question_form';
 
 const mapStateToProps = ({session, questions}) => ({
   currentUser: session.currentUser,
+  currentQuestion: questions.currentQuestion,
   errors: questions.errors
 });
 

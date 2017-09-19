@@ -2,32 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// @media (min-width: 600px) and (max-width: 1000px) {
-//
-// }
-
 #root {
 
-}
-
-.subheader-container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 header {
   background: $lightest-gray;
   color: $blue5;
   position: fixed;
-  z-index: 1;
+  // z-index: 1;
   width: 100%;
 }
 
-.form {
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: $blue1;
   background: $lightest-gray;
-  // position: fixed;
-  // z-index: 1;
 }
 
 .main {
@@ -38,22 +28,18 @@ header {
   display: flex;
 
   .index {
+    display: inline-block;
     margin-right: 20px;
-    flex: 3;
+    width: 59%;
+    // flex: 3;
   }
 
   .form {
-    flex: 2;
+    display: inline-block;
+    width: 40%;
+    z-index: 1;
+    // flex: 2;
   }
-}
-
-body {
-
-  // margin-right: auto;
-  // margin-left: auto;
-  font-family: 'Montserrat', sans-serif;
-  color: $blue1;
-  background: $lightest-gray;
 }
 
 code {
@@ -66,14 +52,43 @@ code {
 }
 
 .button {
+  background: $lightest-gray;
+  color: $red4;
   padding: 5px 10px;
   border-radius: 5px;
-  background: $lightest-gray;
-  transition-duration: 0.25s;
-  color: $red4;
+  transition-duration: 0.2s;
 }
 
 .button:hover {
   background: $red4;
   color: $lightest-gray;
+}
+
+.spacer {
+  font-size: 28px;
+  color: transparent;
+}
+
+@media (min-height: 601px) and (max-height: 1000px) {
+  .form {
+    position: fixed;
+    margin: 0px 20px;
+    left: 60%;
+  }
+}
+
+
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .main {
+    flex-direction: column;
+    .index {
+      width: inherit;
+    }
+
+    .form {
+      width: inherit;
+      margin: 0px 20px;
+    }
+  }
 }

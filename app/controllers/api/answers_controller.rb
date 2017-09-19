@@ -66,7 +66,7 @@ class Api::AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:body, :question_id, :author_id)
+    params.require(:answer).permit(:body, :question_id, :author_id, :lang)
   end
 
 end
